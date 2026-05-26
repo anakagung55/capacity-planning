@@ -97,11 +97,11 @@ with tab1:
 # TAB 2: CLOCKIFY DETAILS
 with tab2:
     st.markdown("### ⏱️ Time Entries Detail (What was done)")
-    st.write("Daftar aktivitas yang telah dicatat oleh tim berdasarkan filter.")
+    st.write("List of activities recorded by the team based on the filter.")
     st.dataframe(filtered_clockify[['Name', 'Description', 'Start_Time', 'Is_Billable']], use_container_width=True, hide_index=True)
 
 # TAB 3: JIRA PIPELINE DETAILS
 with tab3:
     st.markdown("### 🎯 Jira Pipeline (What's left)")
-    st.write("Daftar tiket aktif yang belum berstatus 'Done'.")
+    st.write("List of active tickets that are not yet marked as 'Done'.")
     st.dataframe(filtered_jira[['Assignee', 'Ticket_ID', 'Summary', 'Status', 'Remaining_Estimate_Hrs']], use_container_width=True, hide_index=True)
