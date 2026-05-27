@@ -1,10 +1,15 @@
+import os
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
-# 1. Setup Kredensial
-CLOCKIFY_API_KEY = '<YOUR_CLOCKIFY_API_KEY>'
-WORKSPACE_ID = '<YOUR_WORKSPACE_ID>'
+# Load rahasia dari .env
+load_dotenv()
+
+# 1. Setup Kredensial (Tarik dari .env secara aman)
+CLOCKIFY_API_KEY = os.getenv('CLOCKIFY_API_KEY')
+WORKSPACE_ID = os.getenv('WORKSPACE_ID')
 
 # 2. Daftar User ID Tim 
 team_users = {

@@ -1,12 +1,17 @@
+import os
 import requests
 from requests.auth import HTTPBasicAuth
 import json
 import pandas as pd
+from dotenv import load_dotenv
+
+# Load rahasia dari .env
+load_dotenv()
 
 # 1. Setup Kredensial Jira
-JIRA_DOMAIN = 'https://bluerockdigital.atlassian.net/'
+JIRA_DOMAIN = 'https://bluerockdigital.atlassian.net'
 JIRA_EMAIL = 'agung.ajus@staroster.com'
-JIRA_API_TOKEN = '<YOUR_API_TOKEN>'
+JIRA_API_TOKEN = os.getenv('JIRA_API_TOKEN')
 
 
 # 2. Daftar Nama Tim

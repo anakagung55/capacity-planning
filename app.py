@@ -1,107 +1,84 @@
 import streamlit as st
 import pandas as pd
-import google.generativeai as genai
+from jinja2 import Template
+import streamlit.components.v1 as components
 
-# 1. Konfigurasi Halaman
-st.set_page_config(page_title="Capacity Planning PoC", layout="wide", initial_sidebar_state="expanded")
+# Konfigurasi Halaman (Hapus semua padding bawaan Streamlit)
+st.set_page_config(page_title="Team Capacity Dashboard", layout="wide", initial_sidebar_state="collapsed")
+st.markdown("""
+    <style>
+        .block-container { padding-top: 0rem !important; padding-bottom: 0rem !important; padding-left: 0rem !important; padding-right: 0rem !important; max-width: 100% !important; }
+        header { display: none !important; }
+        #MainMenu { display: none !important; }
+        footer { display: none !important; }
+    </style>
+""", unsafe_allow_html=True)
 
-st.title("BlueRock Capacity Planning & Forecasting")
-st.write("Real-time workload visibility integrating Clockify & Jira data.")
-
-# 2. Load Semua Data
 @st.cache_data
 def load_data():
-    df_merged = pd.read_csv('data/capacity_dashboard_final.csv')
-    df_clockify = pd.read_csv('data/clockify_team_entries.csv')
-    df_jira = pd.read_csv('data/jira_team_tickets.csv')
-    return df_merged, df_clockify, df_jira
-
-df_merged, df_clockify, df_jira = load_data()
-
-# --- SIDEBAR & FILTERS ---
-st.sidebar.header("⚙️ Configuration & Filters")
-api_key = st.sidebar.text_input("Insert Gemini API Key for Smart Narrative:", type="password")
-
-st.sidebar.divider()
-st.sidebar.subheader("Filter Data")
-
-# Filter by Person
-assignee_list = df_merged['Assignee'].unique().tolist()
-selected_assignees = st.sidebar.multiselect(
-    "Select Team Members:",
-    options=assignee_list,
-    default=assignee_list
-)
-
-# Terapkan Filter ke Ketiga Data
-filtered_merged = df_merged[df_merged['Assignee'].isin(selected_assignees)]
-filtered_clockify = df_clockify[df_clockify['Name'].isin(selected_assignees)]
-filtered_jira = df_jira[df_jira['Assignee'].isin(selected_assignees)]
-
-# --- METRICS BANNERS ---
-st.markdown("### 📊 Quick Metrics")
-met1, met2, met3 = st.columns(3)
-with met1:
-    overloaded_count = len(filtered_merged[filtered_merged['Capacity_Left'] < 0])
-    st.metric(label="Overloaded Members", value=overloaded_count)
-with met2:
-    total_time_spent = round(filtered_merged['Time_Spent_This_Week'].sum(), 1)
-    st.metric(label="Total Time Spent (Hrs)", value=total_time_spent)
-with met3:
-    total_remaining = round(filtered_merged['Remaining_Estimate_Hrs'].sum(), 1)
-    st.metric(label="Total Remaining Estimates", value=total_remaining)
-
-st.divider()
-
-# --- AI SMART NARRATIVE ---
-st.markdown("### ✨ AI Workload Summary")
-if api_key:
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash')
-        
-        data_string = filtered_merged.to_string(index=False)
-        prompt = f"""
-        You are an AI assistant for a tech team. Analyze the following capacity planning data and provide a concise, bulleted summary (max 3 bullets).
-        Focus on: 1. Who is overloaded (Capacity_Left < 0). 2. Who has the most free capacity. 3. A brief note if 'Remaining_Estimate_Hrs' is mostly 0.
-        Keep it professional, sharp, and Claude-like.
-        Data: {data_string}
-        """
-        
-        if st.button("Generate AI Insights 🤖"):
-            with st.spinner("Analyzing workload data..."):
-                response = model.generate_content(prompt)
-                st.info(response.text)
+        df_merged = pd.read_csv('data/capacity_dashboard_final.csv')
+        df_clockify = pd.read_csv('data/clockify_team_entries.csv').fillna("-")
+        df_jira = pd.read_csv('data/jira_team_tickets.csv').fillna("-")
+        return df_merged, df_clockify, df_jira
     except Exception as e:
-        st.error(f"Failed to generate AI narrative. Error: {e}")
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+df, df_clockify, df_jira = load_data()
+
+if not df.empty:
+    team_count = len(df)
+    total_logged = round(df['Time_Spent_This_Week'].sum(), 1)
+    total_remaining = round(df['Remaining_Estimate_Hrs'].sum(), 1)
+    capacity_free = round(df[df['Capacity_Left'] > 0]['Capacity_Left'].sum(), 1)
+
+    team_data = []
+    for _, row in df.iterrows():
+        name = row['Assignee']
+        initials = "".join([n[0] for n in str(name).split()[:2]]).upper() if pd.notna(name) else "??"
+        time_spent = round(row['Time_Spent_This_Week'], 1)
+        remaining = round(row['Remaining_Estimate_Hrs'], 1)
+        capacity = round(row['Capacity_Left'], 1)
+        util_pct = min(round((time_spent / 40) * 100), 100)
+        
+        if capacity < 0:
+            status, color_var, badge_class, badge_text = 'overloaded', '--red', 'badge-red', 'Overloaded'
+        elif capacity < 8:
+            status, color_var, badge_class, badge_text = 'at-risk', '--amber', 'badge-amber', 'At risk'
+        else:
+            status, color_var, badge_class, badge_text = 'on-track', '--green', 'badge-green', 'On track'
+
+        team_data.append({
+            'name': name, 'initials': initials, 'time_spent': time_spent,
+            'remaining': remaining, 'capacity': capacity, 'util_pct': util_pct,
+            'status': status, 'color_var': color_var, 'badge_class': badge_class,
+            'badge_text': badge_text, 'cap_abs': abs(capacity)
+        })
+
+    clockify_list = df_clockify.to_dict(orient='records')
+    jira_list = df_jira.to_dict(orient='records')
+
+    try:
+        with open('templates/dashboard.html', 'r', encoding='utf-8') as file:
+            template_str = file.read()
+            
+        template = Template(template_str)
+        html_ready = template.render(
+            team_count=team_count,
+            total_logged=total_logged,
+            total_remaining=total_remaining,
+            capacity_free=capacity_free,
+            team_data=team_data,
+            clockify_data=clockify_list,
+            jira_data=jira_list
+        )
+
+        # SOLUSI FINAL: Gunakan cara rendering resmi Streamlit.
+        # Height di-set ke 850px (ukuran wajar layar monitor), scrolling dimatikan
+        # karena HTML buatan kita sudah bisa scrolling sendiri di dalamnya!
+        components.html(html_ready, height=850, scrolling=False)
+
+    except FileNotFoundError:
+        st.error("File 'templates/dashboard.html' tidak ditemukan!")
 else:
-    st.warning("👈 Please enter your Gemini API Key in the sidebar to unlock the AI Smart Narrative.")
-
-st.divider()
-
-# --- TABS UNTUK MENGAKOMODASI SEMUA DATA ---
-tab1, tab2, tab3 = st.tabs(["📌 Overview (Merged)", "⏱️ Clockify (Time Logged)", "🎯 Jira Pipeline (Remaining)"])
-
-# TAB 1: OVERVIEW (Grafik & Ringkasan)
-with tab1:
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        st.markdown("**Merged Capacity Data**")
-        st.dataframe(filtered_merged, use_container_width=True, hide_index=True)
-    with col2:
-        st.markdown("**Workload vs Capacity Chart**")
-        if not filtered_merged.empty:
-            chart_data = filtered_merged.set_index('Assignee')[['Time_Spent_This_Week', 'Capacity_Left']]
-            st.bar_chart(chart_data)
-
-# TAB 2: CLOCKIFY DETAILS
-with tab2:
-    st.markdown("### ⏱️ Time Entries Detail (What was done)")
-    st.write("List of activities recorded by the team based on the filter.")
-    st.dataframe(filtered_clockify[['Name', 'Description', 'Start_Time', 'Is_Billable']], use_container_width=True, hide_index=True)
-
-# TAB 3: JIRA PIPELINE DETAILS
-with tab3:
-    st.markdown("### 🎯 Jira Pipeline (What's left)")
-    st.write("List of active tickets that are not yet marked as 'Done'.")
-    st.dataframe(filtered_jira[['Assignee', 'Ticket_ID', 'Summary', 'Status', 'Remaining_Estimate_Hrs']], use_container_width=True, hide_index=True)
+    st.error("Data CSV tidak ditemukan.")
