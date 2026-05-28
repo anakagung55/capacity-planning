@@ -4,7 +4,7 @@ import requests
 CLOCKIFY_API_KEY = 'MDg3MjBlZTctODZmNi00NGNlLWFlMjQtYWEzZjVhMmViODY0'
 
 # 2. Masukkan Workspace ID yang baru saja kamu dapatkan
-WORKSPACE_ID = '68abcd9b-8c1e-4a3c-9f0e-1234567890ab'
+WORKSPACE_ID = '68abc134af2ceb7c58ddcb22'
 
 # 3. URL Endpoint untuk melihat semua user di dalam workspace tersebut
 url = f"https://api.clockify.me/api/v1/workspaces/{WORKSPACE_ID}/users"

@@ -17,27 +17,25 @@
     --red: #f87171; --red-bg: rgba(248,113,113,0.1);
     --blue: #60a5fa; --teal: #2dd4bf;
   }
+  /* PERBAIKAN SCROLL: Hapus overflow hidden, biarkan body natural */
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: -1; }
   
-  /* Hilangkan scrollbar utama website */
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
-  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 1600px; width: 96%; margin: 0 auto; padding: 2rem 2rem 4rem; }
   
-  .page { position: relative; z-index: 1; width: 100%; max-width: 1600px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; height: 100%; }
-  
-  /* Header & Panel Kontrol tetap fixed di atas */
-  .top-section { flex-shrink: 0; }
-  
-  .header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .header-left h1 { font-size: 24px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
   .header-left p { font-size: 14px; color: var(--text2); margin-top: 4px; }
   .header-right { display: flex; align-items: center; gap: 10px; }
+  
+  .timeframe-select { background: var(--bg3); border: 1px solid var(--border2); color: var(--text); padding: 8px 12px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; margin-right: 10px; cursor: pointer; transition: 0.2s;}
+  .timeframe-select:hover { border-color: var(--accent); }
+
   .week-pill { font-family: 'DM Mono', monospace; font-size: 12px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 8px 14px; color: var(--text2); display: flex; align-items: center; gap: 6px; }
-  .sync-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 8px 16px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; text-decoration: none;}
+  .sync-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 8px 16px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s;}
   .sync-btn:hover { opacity: 0.85; }
   
-  .control-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-  
-  /* Tabs */
+  .control-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; }
   .source-tabs { display: flex; gap: 8px; }
   .stab { font-size: 13px; font-weight: 500; padding: 8px 20px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; }
   .stab:hover { border-color: var(--border2); color: var(--text); }
@@ -45,42 +43,31 @@
   .stab .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text3); }
   .stab.active .dot { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
-  /* Kotak Pencarian Global */
-  .global-search { position: relative; width: 320px; }
+  .global-search { position: relative; width: 300px; }
   .global-search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text3); width: 16px; height: 16px; }
   .global-search input { width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 10px 10px 36px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text); outline: none; transition: border-color 0.2s; }
   .global-search input:focus { border-color: var(--accent); }
-  
-  /* Konten Utama (Bisa di-scroll) */
-  .content-scrollable { flex-grow: 1; overflow-y: auto; padding-right: 10px; }
-  /* Styling Scrollbar cantik */
-  .content-scrollable::-webkit-scrollbar { width: 8px; }
-  .content-scrollable::-webkit-scrollbar-track { background: transparent; }
-  .content-scrollable::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
-  .content-scrollable::-webkit-scrollbar-thumb:hover { background: var(--text3); }
 
-  /* Cards */
-  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 1.5rem; }
-  .scard { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; position: relative; overflow: hidden; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 1.75rem; }
+  .scard { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; position: relative; overflow: hidden; }
   .scard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent-color, var(--accent)); opacity: 0.7; }
-  .scard-label { font-size: 12px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-  .scard-val { font-size: 28px; font-weight: 600; color: var(--text); letter-spacing: -1px; line-height: 1; }
-  .scard-sub { font-size: 12px; color: var(--text2); margin-top: 4px; }
+  .scard-label { font-size: 12px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .scard-val { font-size: 32px; font-weight: 600; color: var(--text); letter-spacing: -1px; line-height: 1; }
+  .scard-sub { font-size: 12px; color: var(--text2); margin-top: 8px; }
 
   .util-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 2rem; }
   .util-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; transition: transform 0.2s; }
-  .util-card:hover { transform: translateY(-3px); }
+  .util-card:hover { transform: translateY(-4px); }
   .util-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
   .util-pct { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; color: var(--text); line-height: 1; }
   .util-sub { font-size: 11px; color: var(--text2); margin-top: 4px; }
   
-  /* Tables */
   .main-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2rem;}
   .card-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
   .card-header-title { font-size: 15px; font-weight: 600; color: var(--text); }
   
   table { width: 100%; border-collapse: collapse; }
-  thead th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); padding: 14px 24px; text-align: left; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 2; }
+  thead th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); padding: 14px 24px; text-align: left; border-bottom: 1px solid var(--border); background: var(--bg); }
   tbody tr { transition: background 0.15s; }
   tbody tr:hover { background: var(--bg3); }
   tbody tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
@@ -88,11 +75,10 @@
   
   .detail-text { color: var(--text2); font-size: 13px; line-height: 1.5;}
   .tag { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-family: 'DM Mono', monospace; background: var(--bg4); color: var(--text); border: 1px solid var(--border2);}
-
   .person-cell { display: flex; align-items: center; gap: 14px; }
   .avatar { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; font-family: 'DM Mono', monospace; }
   .person-name { font-size: 14px; font-weight: 500; color: var(--text); }
-
+  
   .progress-wrap { width: 100%; max-width: 250px; }
   .prog-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
   .prog-logged { font-size: 14px; font-weight: 500; color: var(--text); font-family: 'DM Mono', monospace; }
@@ -117,227 +103,239 @@
   .view-section { display: none; }
   .view-section.active { display: block; animation: fadeIn 0.3s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="top-section">
-    <div class="header">
-      <div class="header-left">
-        <h1>Team Capacity Dashboard</h1>
-        <p>Weekly workload visibility per team member · Bluerock</p>
-      </div>
-      <div class="header-right">
-        <div class="week-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Live Data Sync
-        </div>
-        <button class="sync-btn" onclick="location.reload()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-          Sync Data
-        </button>
-      </div>
+  <div class="header">
+    <div class="header-left">
+      <h1>Team Capacity Dashboard</h1>
+      <p>Workload visibility integrating Clockify & Jira data · Bluerock</p>
     </div>
+    <div class="header-right">
+      <select id="timeframeFilter" class="timeframe-select" onchange="changeTimeframe(this.value)">
+        <option value="this_week" {% if current_timeframe == 'this_week' %}selected{% endif %}>This Week</option>
+        <option value="last_week" {% if current_timeframe == 'last_week' %}selected{% endif %}>Last Week</option>
+        <option value="this_month" {% if current_timeframe == 'this_month' %}selected{% endif %}>This Month</option>
+        <option value="forecast" {% if current_timeframe == 'forecast' %}selected{% endif %}>Forecast (Future)</option>
+      </select>
 
-    <div class="control-panel">
-      <div class="source-tabs">
-        <button class="stab active" onclick="switchTab('merged', this)">
-          <span class="dot"></span> Merged Dashboard
-        </button>
-        <button class="stab" onclick="switchTab('clockify', this)">
-          <span class="dot"></span> Clockify Logs
-        </button>
-        <button class="stab" onclick="switchTab('jira', this)">
-          <span class="dot"></span> Jira Pipeline
-        </button>
+      <div class="week-pill">
+        <span id="sync-status">LIVE SYSTEM</span>
       </div>
-
-      <div class="global-search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="searchInput" placeholder="Filter by member name, ticket, or status..." onkeyup="filterAllData()">
-      </div>
+      <button class="sync-btn" onclick="triggerSync()" id="syncBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        <span>Sync APIs</span>
+      </button>
     </div>
   </div>
 
-  <div class="content-scrollable">
-    
-    <div id="view-merged" class="view-section active">
-        <div class="summary-grid">
-          <div class="scard" style="--accent-color: var(--accent)">
-            <div class="scard-label">Team members</div>
-            <div class="scard-val" id="count-members">{{ team_count }}</div>
-            <div class="scard-sub">Active this week</div>
-          </div>
-          <div class="scard" style="--accent-color: var(--teal)">
-            <div class="scard-label">Total logged</div>
-            <div class="scard-val">{{ total_logged }}h</div>
-            <div class="scard-sub">Clockify Entries</div>
-          </div>
-          <div class="scard" style="--accent-color: var(--amber)">
-            <div class="scard-label">Remaining est.</div>
-            <div class="scard-val">{{ total_remaining }}h</div>
-            <div class="scard-sub">across open Jira tickets</div>
-          </div>
-          <div class="scard" style="--accent-color: var(--green)">
-            <div class="scard-label">Capacity free</div>
-            <div class="scard-val">{{ capacity_free }}h</div>
-            <div class="scard-sub">Available bandwidth</div>
-          </div>
-        </div>
-
-        <div class="util-row" id="util-container">
-          {% for person in team_data %}
-          <div class="util-card filterable-card" data-name="{{ person.name | lower }}">
-            <div class="util-name">
-              <div class="avatar" style="background:rgba(255,255,255,0.05);color:var({{ person.color_var }});">{{ person.initials }}</div>
-              {{ person.name }}
-            </div>
-            <div class="util-arc">
-              <svg width="100%" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 40 A32 32 0 0 1 72 40" stroke="#1e2030" stroke-width="6" stroke-linecap="round"/>
-                <path d="M8 40 A32 32 0 0 1 72 40" stroke="var({{ person.color_var }})" stroke-width="6" stroke-linecap="round" stroke-dasharray="100.5" stroke-dashoffset="{{ 100.5 - (person.util_pct / 100 * 100.5) }}"/>
-              </svg>
-            </div>
-            <div class="util-pct" style="color:var({{ person.color_var }})">{{ person.util_pct }}%</div>
-            <div class="util-sub">utilisation</div>
-          </div>
-          {% endfor %}
-        </div>
-
-        <div class="main-card">
-          <div class="card-header">
-            <div class="card-header-title">Individual workload breakdown</div>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Member</th>
-                <th>Time logged this week</th>
-                <th>Remaining est.</th>
-                <th style="text-align:right;">Capacity left</th>
-                <th style="text-align:right;">Status</th>
-              </tr>
-            </thead>
-            <tbody id="merged-table-body">
-              {% for person in team_data %}
-              <tr class="filterable-row">
-                <td>
-                  <div class="person-cell">
-                    <div class="avatar" style="background:rgba(255,255,255,0.05);color:var({{ person.color_var }});">{{ person.initials }}</div>
-                    <div class="person-name">{{ person.name }}</div>
-                  </div>
-                </td>
-                <td>
-                  <div class="progress-wrap">
-                    <div class="prog-top">
-                      <span class="prog-logged">{{ person.time_spent }}h</span>
-                      <span class="prog-cap">/ 40h</span>
-                    </div>
-                    <div class="prog-bg">
-                      <div class="prog-fill" style="width:{{ person.util_pct }}%;background:var({{ person.color_var }})"></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="hrs-val">{{ person.remaining }}h</div>
-                  <div class="hrs-sub">Active Jira est.</div>
-                </td>
-                <td>
-                  <div class="cap-cell">
-                    <div class="cap-bar-wrap">
-                      <div class="cap-bar-bg">
-                        <div class="cap-bar-fill" style="width:100%;background:var({{ person.color_var }})"></div>
-                      </div>
-                      {% if person.capacity < 0 %}
-                        <span class="hrs-val hrs-neg">−{{ person.cap_abs }}h</span>
-                      {% else %}
-                        <span class="hrs-val">+{{ person.capacity }}h</span>
-                      {% endif %}
-                    </div>
-                    <div class="hrs-sub">{% if person.capacity < 0 %}over capacity{% else %}free this week{% endif %}</div>
-                  </div>
-                </td>
-                <td style="text-align:right">
-                  <span class="badge {{ person.badge_class }}">{{ person.badge_text }}</span>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+  <div class="control-panel">
+    <div class="source-tabs">
+      <button class="stab active" onclick="switchTab('merged', this)">
+        <span class="dot"></span> Merged Dashboard
+      </button>
+      <button class="stab" onclick="switchTab('clockify', this)">
+        <span class="dot"></span> Clockify Logs
+      </button>
+      <button class="stab" onclick="switchTab('jira', this)">
+        <span class="dot"></span> Jira Pipeline
+      </button>
     </div>
 
-    <div id="view-clockify" class="view-section">
-        <div class="main-card">
-          <div class="card-header">
-            <div class="card-header-title">Raw Clockify Log Entries</div>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 200px;">Member</th>
-                <th>Task Description</th>
-                <th style="width: 250px;">Timestamp</th>
-                <th style="width: 150px;">Billable</th>
-              </tr>
-            </thead>
-            <tbody id="clockify-table-body">
-              {% for log in clockify_data %}
-              <tr class="filterable-row">
-                <td><div class="person-name">{{ log.Name }}</div></td>
-                <td class="detail-text">{{ log.Description }}</td>
-                <td class="detail-text">{{ log.Start_Time }}</td>
-                <td>
-                  {% if log.Is_Billable %}
-                    <span class="tag" style="color:var(--green); border-color:var(--green)">Yes</span>
-                  {% else %}
-                    <span class="tag">No</span>
-                  {% endif %}
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+    <div class="global-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="searchInput" placeholder="Filter by member name, task, or status..." onkeyup="filterAllData()">
     </div>
+  </div>
 
-    <div id="view-jira" class="view-section">
-        <div class="main-card">
-          <div class="card-header">
-            <div class="card-header-title">Active Jira Pipeline</div>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 150px;">Ticket ID</th>
-                <th style="width: 200px;">Assignee</th>
-                <th>Summary</th>
-                <th style="width: 150px;">Status</th>
-                <th style="width: 150px; text-align:right;">Remaining</th>
-              </tr>
-            </thead>
-            <tbody id="jira-table-body">
-              {% for ticket in jira_data %}
-              <tr class="filterable-row">
-                <td><span class="tag">{{ ticket.Ticket_ID }}</span></td>
-                <td><div class="person-name">{{ ticket.Assignee }}</div></td>
-                <td class="detail-text">{{ ticket.Summary }}</td>
-                <td><span class="tag">{{ ticket.Status }}</span></td>
-                <td style="text-align:right;">
-                  <div class="hrs-val">{{ ticket.Remaining_Estimate_Hrs }}h</div>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+  <div id="view-merged" class="view-section active">
+      <div class="summary-grid">
+        <div class="scard" style="--accent-color: var(--accent)">
+          <div class="scard-label">Team members</div>
+          <div class="scard-val" id="count-members">{{ team_count }}</div>
+          <div class="scard-sub">Active in this view</div>
         </div>
-    </div>
+        <div class="scard" style="--accent-color: var(--teal)">
+          <div class="scard-label">Total logged</div>
+          <div class="scard-val">{{ total_logged }}h</div>
+          <div class="scard-sub">Clockify Entries</div>
+        </div>
+        <div class="scard" style="--accent-color: var(--amber)">
+          <div class="scard-label">Remaining est.</div>
+          <div class="scard-val">{{ total_remaining }}h</div>
+          <div class="scard-sub">across open Jira tickets</div>
+        </div>
+        <div class="scard" style="--accent-color: var(--green)">
+          <div class="scard-label">Capacity free</div>
+          <div class="scard-val">{{ capacity_free }}h</div>
+          <div class="scard-sub">Available bandwidth</div>
+        </div>
+      </div>
 
-  </div> </div>
+      <div class="util-row" id="util-container">
+        {% for person in team_data %}
+        <div class="util-card filterable-card" data-name="{{ person.name | lower }}">
+          <div class="util-name">
+            <div class="avatar" style="background:rgba(255,255,255,0.05);color:var({{ person.color_var }});">{{ person.initials }}</div>
+            {{ person.name }}
+          </div>
+          <div class="util-arc">
+            <svg width="100%" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40 A32 32 0 0 1 72 40" stroke="#1e2030" stroke-width="6" stroke-linecap="round"/>
+              <path d="M8 40 A32 32 0 0 1 72 40" stroke="var({{ person.color_var }})" stroke-width="6" stroke-linecap="round" stroke-dasharray="100.5" stroke-dashoffset="{{ 100.5 - (person.util_pct / 100 * 100.5) }}"/>
+            </svg>
+          </div>
+          <div class="util-pct" style="color:var({{ person.color_var }})">{{ person.util_pct }}%</div>
+          <div class="util-sub">utilisation</div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="main-card">
+        <div class="card-header">
+          <div class="card-header-title">Individual workload breakdown</div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Time logged</th>
+              <th>Remaining est.</th>
+              <th style="text-align:right;">Capacity left</th>
+              <th style="text-align:right;">Status</th>
+            </tr>
+          </thead>
+          <tbody id="merged-table-body">
+            {% for person in team_data %}
+            <tr class="filterable-row">
+              <td>
+                <div class="person-cell">
+                  <div class="avatar" style="background:rgba(255,255,255,0.05);color:var({{ person.color_var }});">{{ person.initials }}</div>
+                  <div class="person-name">{{ person.name }}</div>
+                </div>
+              </td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="prog-top">
+                    <span class="prog-logged">{{ person.time_spent }}h</span>
+                    <span class="prog-cap">/ {{ person.baseline }}h</span>
+                  </div>
+                  <div class="prog-bg">
+                    <div class="prog-fill" style="width:{{ person.util_pct }}%;background:var({{ person.color_var }})"></div>
+                  </div>
+                  <div style="font-size: 11px; font-weight: 500; color: #A0A0A0; display: flex; gap: 12px; margin-top: 8px;">
+                      <span style="display: flex; align-items: center; gap: 4px;">
+                          <div style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--green);"></div>
+                          Billable: <span style="color: #E0E0E0;">{{ person.billable_hrs }}h</span>
+                      </span>
+                      <span style="display: flex; align-items: center; gap: 4px;">
+                          <div style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--amber);"></div>
+                          Non: <span style="color: #E0E0E0;">{{ person.non_billable_hrs }}h</span>
+                      </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="hrs-val">{{ person.remaining }}h</div>
+                <div class="hrs-sub">Active Jira est.</div>
+              </td>
+              <td>
+                <div class="cap-cell">
+                  <div class="cap-bar-wrap">
+                    <div class="cap-bar-bg">
+                      <div class="cap-bar-fill" style="width:100%;background:var({{ person.color_var }})"></div>
+                    </div>
+                    {% if person.capacity < 0 %}
+                      <span class="hrs-val hrs-neg">−{{ person.cap_abs }}h</span>
+                    {% else %}
+                      <span class="hrs-val">+{{ person.capacity }}h</span>
+                    {% endif %}
+                  </div>
+                  <div class="hrs-sub">{% if person.capacity < 0 %}over capacity{% else %}free time{% endif %}</div>
+                </div>
+              </td>
+              <td style="text-align:right">
+                <span class="badge {{ person.badge_class }}">{{ person.badge_text }}</span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <div id="view-clockify" class="view-section">
+      <div class="main-card">
+        <div class="card-header">
+          <div class="card-header-title">Raw Clockify Log Entries</div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 200px;">Member</th>
+              <th>Task Description</th>
+              <th style="width: 250px;">Timestamp</th>
+              <th style="width: 150px;">Billable</th>
+            </tr>
+          </thead>
+          <tbody id="clockify-table-body">
+            {% for log in clockify_data %}
+            <tr class="filterable-row">
+              <td><div class="person-name">{{ log.Name }}</div></td>
+              <td class="detail-text">{{ log.Description }}</td>
+              <td class="detail-text">{{ log.Start_Time }}</td>
+              <td>
+                {% if log.Is_Billable %}
+                  <span class="tag" style="color:var(--green); border-color:var(--green)">Yes</span>
+                {% else %}
+                  <span class="tag">No</span>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <div id="view-jira" class="view-section">
+      <div class="main-card">
+        <div class="card-header">
+          <div class="card-header-title">Active Jira Pipeline</div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 150px;">Ticket ID</th>
+              <th style="width: 200px;">Assignee</th>
+              <th>Summary</th>
+              <th style="width: 150px;">Status</th>
+              <th style="width: 150px; text-align:right;">Remaining</th>
+            </tr>
+          </thead>
+          <tbody id="jira-table-body">
+            {% for ticket in jira_data %}
+            <tr class="filterable-row">
+              <td><span class="tag">{{ ticket.Ticket_ID }}</span></td>
+              <td><div class="person-name">{{ ticket.Assignee }}</div></td>
+              <td class="detail-text">{{ ticket.Summary }}</td>
+              <td><span class="tag">{{ ticket.Status }}</span></td>
+              <td style="text-align:right;">
+                <div class="hrs-val">{{ ticket.Remaining_Estimate_Hrs }}h</div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+</div>
 
 <script>
+  // 1. TABS LOGIC
   function switchTab(tabId, btn) {
     document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
@@ -346,35 +344,49 @@
     document.getElementById('view-' + tabId).classList.add('active');
   }
 
+  // 2. SEARCH FILTER LOGIC
   function filterAllData() {
-    let input = document.getElementById("searchInput");
-    let filter = input.value.toLowerCase();
+    let input = document.getElementById("searchInput").value.toLowerCase();
 
     let cards = document.querySelectorAll('.filterable-card');
     let visibleCards = 0;
     cards.forEach(card => {
-      let textValue = card.textContent || card.innerText;
-      if (textValue.toLowerCase().indexOf(filter) > -1) {
-        card.style.display = "";
-        visibleCards++;
-      } else {
-        card.style.display = "none";
-      }
+      if ((card.textContent || card.innerText).toLowerCase().indexOf(input) > -1) {
+        card.style.display = ""; visibleCards++;
+      } else { card.style.display = "none"; }
     });
-    
     document.getElementById("count-members").innerText = visibleCards;
 
-    let rows = document.querySelectorAll('.filterable-row');
-    rows.forEach(row => {
-      let textValue = row.textContent || row.innerText;
-      if (textValue.toLowerCase().indexOf(filter) > -1) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
-      }
+    document.querySelectorAll('.filterable-row').forEach(row => {
+      row.style.display = (row.textContent || row.innerText).toLowerCase().indexOf(input) > -1 ? "" : "none";
     });
   }
 
+  // 3. TIMEFRAME DROPDOWN LOGIC (Nembak URL Query param ke Flask)
+  function changeTimeframe(value) {
+    window.location.href = "/?timeframe=" + value;
+  }
+
+  // 4. API SYNC LOGIC
+  function triggerSync() {
+    const btn = document.getElementById('syncBtn');
+    const statusText = document.getElementById('sync-status');
+    const btnText = btn.querySelector('span');
+    
+    btnText.innerText = "Syncing APIs...";
+    btn.style.opacity = "0.6"; btn.disabled = true;
+    statusText.innerText = "Pulling Jira/Clockify...";
+
+    fetch('/api/sync', { method: 'POST' })
+      .then(r => r.json())
+      .then(data => {
+        if(data.status === 'success') { window.location.reload(); } 
+        else { alert("Error: " + data.message); btn.disabled = false; btn.style.opacity = "1"; btnText.innerText = "Sync APIs"; }
+      })
+      .catch(e => { alert("Jaringan terputus."); btn.disabled = false; btn.style.opacity = "1"; btnText.innerText = "Sync APIs"; });
+  }
+
+  // 5. ANIMATION
   document.querySelectorAll('.prog-fill, .cap-bar-fill').forEach(bar => {
     const target = bar.style.width;
     bar.style.width = '0';

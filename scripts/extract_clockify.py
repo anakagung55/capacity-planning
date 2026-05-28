@@ -1,32 +1,26 @@
-import os
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
-from dotenv import load_dotenv
+from datetime import datetime, timedelta, timezone
 
-# Load rahasia dari .env
-load_dotenv()
-
-# 1. Setup Kredensial (Tarik dari .env secara aman)
-CLOCKIFY_API_KEY = os.getenv('CLOCKIFY_API_KEY')
-WORKSPACE_ID = os.getenv('WORKSPACE_ID')
+# 1. Setup Kredensial
+CLOCKIFY_API_KEY = 'MDg3MjBlZTctODZmNi00NGNlLWFlMjQtYWEzZjVhMmViODY0'
+WORKSPACE_ID = '68abc134af2ceb7c58ddcb22' # <-- INI WORKSPACE ASLI YANG BENAR!
 
 # 2. Daftar User ID Tim 
 team_users = {
-    "Abu Baskara": "<USER_ID>",
-    "Agung Ajus": "<USER_ID>",
-    "Alex Russo": "<USER_ID>",
-    "Andrew Branagan": "<USER_ID>",
-    "Ben Stone": "<USER_ID>",
-    "Denny Ferdiansyah": "<USER_ID>",
-    "Kate Wiggins": "<USER_ID>",   
-    "Tabatha Shaw": "<USER_ID>",
-    "Tom Adams": "<USER_ID>"
+    "Abu Baskara": "692cc9e25831f77701ac3344",
+    "Agung Ajus": "69924903d96aea171725d0bf",
+    "Alex Russo": "691e41d5e268e57a5174a94b",
+    "Andrew Branagan": "68abc20baf2ceb7c58ddd4b8",
+    "Ben Stone": "68abc135af2ceb7c58ddcb23",
+    "Denny Ferdiansyah": "68abc20baf2ceb7c58ddd4ba",
+    "Tom Adams": "68abc20baf2ceb7c58ddd4bb"
 }
 
-# 3. Setup Timeframe (14 Hari Terakhir)
-end_date = datetime.utcnow()
-start_date = end_date - timedelta(days=14)
+# 3. Setup Timeframe (30 Hari Terakhir / 1 Bulan)
+# Memperbaiki warning deprecation UTC
+end_date = datetime.now(timezone.utc)
+start_date = end_date - timedelta(days=30)
 start_iso = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
 end_iso = end_date.strftime('%Y-%m-%dT%H:%M:%SZ')
 
@@ -37,14 +31,14 @@ headers = {
 all_time_entries = []
 
 # 4. Looping untuk menarik data tiap user
-print("Memulai ekstraksi data Clockify...")
+print("Memulai ekstraksi data Clockify untuk 30 HARI TERAKHIR...")
 for name, user_id in team_users.items():
     print(f"Menarik data untuk: {name}")
     url = f"https://api.clockify.me/api/v1/workspaces/{WORKSPACE_ID}/user/{user_id}/time-entries"
     params = {
         "start": start_iso,
         "end": end_iso,
-        "page-size": 200 # Ambil maksimal 200 log per orang
+        "page-size": 1000 # Diperbesar agar muat log satu bulan penuh
     }
     
     response = requests.get(url, headers=headers, params=params)
@@ -54,7 +48,6 @@ for name, user_id in team_users.items():
         for entry in entries:
             # Ekstraksi field penting
             description = entry.get('description', '')
-            # Menghitung durasi (Clockify pakai format PTxHxMxS, lebih aman tarik start & end time lalu hitung di pandas nanti)
             time_interval = entry.get('timeInterval', {})
             start_time = time_interval.get('start')
             end_time = time_interval.get('end')

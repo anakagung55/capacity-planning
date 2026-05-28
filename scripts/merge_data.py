@@ -15,9 +15,6 @@ def extract_ticket_id(text):
 
 df_clockify['Ticket_ID'] = df_clockify['Description'].apply(extract_ticket_id)
 
-# NEW: Tandai Billable/Non-Billable
-df_clockify['Is_Billable'] = df_clockify['Ticket_ID'].notna()
-
 # 3. Hitung Durasi & Filter Waktu (PENTING!)
 df_clockify['Start_Time'] = pd.to_datetime(df_clockify['Start_Time'], utc=True)
 df_clockify['End_Time'] = pd.to_datetime(df_clockify['End_Time'], utc=True)
