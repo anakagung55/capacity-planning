@@ -66,7 +66,8 @@ def fetch_clockify_realtime(start_date, end_date):
 
 # --- FUNGSI 2: TARIK DATA JIRA ---
 def fetch_jira_realtime():
-    jql_query = f'assignee IN ("{('", "').join(team_names)}") AND statusCategory != Done'
+    team_names_joined = '", "'.join(team_names)
+    jql_query = f'assignee IN ("{team_names_joined}") AND statusCategory != Done'
     url = f"{JIRA_DOMAIN}/rest/api/3/search/jql"
     auth = HTTPBasicAuth(JIRA_EMAIL, JIRA_API_TOKEN)
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
