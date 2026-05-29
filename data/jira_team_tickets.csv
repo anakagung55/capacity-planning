@@ -3,25 +3,23 @@ WIZ-13,Andrew Branagan,In Progress,WiZDOM Documentation,0.0,0.0,0.0
 WB-2,Alex Russo,Ready for QA,WB - Security White Paper,0.0,0.0,0.05
 VC-25,Andrew Branagan,Ready for Client Review,Please link 3 new practice groups to the LHD Admin Account ,0.0,0.0,0.0
 VC-22,Denny Ferdiansyah,On Hold,Add 2 new Practice Groups to the LHD Admin Practice Group Account ,0.0,0.0,0.0
-ORTHO-527,Alex Russo,On Hold,Boon Kiak Portal Error,0.0,0.0,4.0
-NEOZCCA-23,Denny Ferdiansyah,Ready for QA,Middleware Error Investigation,0.0,0.0,0.0
 MMS-56,Agung Ajus,Selected for Development,Mad Mex Site Vulnerabilities ,0.0,0.0,0.0
 MMS-55,Alex Russo,Ready for QA,Revamp Catering Page Design,0.0,0.0,2.8
 MMS-54,Alex Russo,Ready for Client Review,Nutritional Calculator - Investigate Bounce Rate ,0.0,0.0,0.23333333333333334
 MMS-52,Alex Russo,Ready for Client Review,Ability to add double filling to nutritional calculator ,0.0,0.0,0.0
 MMS-32,Alex Russo,Ready for Client Review,Multiple Nutritional Calculator Dietary Selections ,0.0,0.0,1.55
 INT-280,Agung Ajus,Selected for Development,Stage 1 – AI Visibility Audit (Diagnostic Phase),0.0,0.0,0.0
-INT-262,Alex Russo,Backlog,HTML Document Hosting Query,0.0,0.0,1.0
+INT-265,Alex Russo,Selected for Development,Shopify - Templated Qwilr contracts and costing ,4.0,0.0,4.0
+INT-262,Agung Ajus,Selected for Development,HTML Document Hosting Query,0.0,0.0,1.25
 INT-258,Alex Russo,Ready for QA,Define architecture and deployment plan for Claude Code in a network-restricted environment,0.0,0.0,0.0
 INT-257,Denny Ferdiansyah,Selected for Development,Sentry Investigation,0.0,0.0,0.016666666666666666
-INT-255,Alex Russo,Backlog,Ideas - Define & Launch Data & AI Service Offerings,0.0,0.0,0.0
-INT-253,Agung Ajus,In Progress,Web Idea: Web UI Reporting Bot - Version 2,0.0,0.0,1.05
+INT-253,Agung Ajus,Ready for QA,Web Idea: Web UI Reporting Bot - Version 2,0.0,0.0,3.05
 INT-252,Alex Russo,Ready for Client Review,Mobile App - Mad Mex Mobile App PoC,0.0,0.0,4.5
 INT-251,Agung Ajus,Selected for Development,Xero App Idea: Aged Debtors Tool,0.0,0.0,0.016666666666666666
 INT-250,Andrew Branagan,Ready for QA,Research existing Cin7 Core Apps,0.0,0.0,1.0
 INT-247,Alex Russo,Ready for QA,Review BlueRock Website Services,0.0,0.0,1.0
 INT-246,Denny Ferdiansyah,Selected for Development,Consolidated Tenders - Tender Review & Application Automation,0.0,0.0,0.0
-INT-243,Agung Ajus,Selected for Development,Web Idea: AI Readiness and Roadmap Tool,0.0,0.0,0.05
+INT-243,Agung Ajus,Selected for Development,Web Idea: AI Readiness and Roadmap Tool,0.0,0.0,0.06666666666666667
 INT-241,Agung Ajus,Selected for Development,Ideas - AI SaaS Micro Service Ideas,0.0,0.0,0.016666666666666666
 INT-236,Agung Ajus,Selected for Development,Ideas - Subscription Based Agents,0.0,0.0,0.0
 INT-228,Andrew Branagan,Ready for QA,"n8n-triggered Jira, Confluence, and code repository setup from Teams chat",0.0,0.0,0.0
@@ -40,7 +38,7 @@ INT-213,Alex Russo,Ready for QA,HubSpot Apps,0.0,0.0,3.5
 INT-206,Denny Ferdiansyah,Selected for Development,HubSpot - Customer and Company Sentiment Analysis AI Research,0.0,0.0,0.0
 INT-196,Andrew Branagan,On Hold,Decommission Servers,0.0,0.0,0.0
 INT-195,Andrew Branagan,Ready for QA,Complete Coffee Confluence Documentation,0.0,0.0,2.0
-INT-193,Denny Ferdiansyah,In Progress,Standard SLA Document,0.0,0.0,4.75
+INT-193,Alex Russo,Ready for QA,Standard SLA Document,0.0,0.0,4.75
 INT-188,Agung Ajus,Selected for Development,Ideas - BRD Webpage New Content for Services,0.0,0.0,1.0
 INT-187,Agung Ajus,Selected for Development,Ideas - Copilot and MS Tools as a service,0.0,0.0,2.0
 INT-186,Agung Ajus,Selected for Development,SaaS Tools - Database cleaner automation,0.0,0.0,0.0
@@ -49,27 +47,27 @@ INT-160,Andrew Branagan,Ready for QA,Review Potential Vulnerabilities,0.0,0.0,0.
 INT-139,Denny Ferdiansyah,In Progress,Ideas - Client Account Reviews - Opportunity Identification,0.0,0.0,0.0
 INT-134,Andrew Branagan,On Hold,Investigate Mailgun MX record Causing issues for external email delivery to bluerock emails,0.0,0.0,0.0
 INT-119,Denny Ferdiansyah,Selected for Development,Ideas - n8n Access & Workflow Provision,0.0,0.0,0.0
-HBS-18,Denny Ferdiansyah,Backlog,Quote to do recommendations from HB-237,0.0,0.0,0.0
-HBS-17,Denny Ferdiansyah,Selected for Development,SSO Technical Questions,0.0,0.0,0.0
+HBS-19,Andrew Branagan,Backlog,Unable to log in to eWay,0.0,0.0,0.0
 GSSHOP-45,Andrew Branagan,QA & REVIEW,Theme Edit for Details Meta Field,0.0,0.0,4.0
 GSSHOP-23,Andrew Branagan,QA & REVIEW,Metafield HTML Code - Theme Setup,0.0,0.0,4.5
 GSSHOP-22,Andrew Branagan,QA & REVIEW,Media Export - Global Spill Current Site,0.0,0.0,0.0
 GSCCA-46,Andrew Branagan,Ready for Client Review,Add Unsubscribe Link to Footer,0.0,0.0,0.0
 GSCCA-45,Andrew Branagan,Ready for Client Review,Implement Better Caching Solution,0.0,0.0,0.0
-EQ-61,Alex Russo,ESTIMATION,ESTIMATE: Investigate Maropost (Retail Express) Gift Voucher Function ,0.0,0.0,1.0
 EQ-58,Andrew Branagan,Backlog,Jul - Oct 2025 Quarterly Report,0.0,0.0,0.0
-COFE-79,Alex Russo,On Hold,ChannelWiz Setup - Tripod Coffee,0.0,0.0,0.0
-COFE-70,Alex Russo,On Hold,Service Sale Sync (Xero to Cin7),0.0,0.0,0.0
-COFE-51,Alex Russo,Ready for Client Review,Direct Printer Integration - Zebra Printers,0.0,0.0,4.416666666666667
-COFE-40,Alex Russo,In Progress,Reset Password Email Not Sending,0.0,0.0,4.0
+COFE-79,Alex Russo,Ready for Client Review,ChannelWiz Setup - Tripod Coffee,0.0,0.0,0.0
+COFE-70,Alex Russo,Ready for Client Review,Service Sale Sync (Xero to Cin7),0.0,0.0,0.0
+COFE-51,Alex Russo,On Hold,Direct Printer Integration - Zebra Printers,0.0,0.0,4.433333333333334
+COFE-40,Alex Russo,On Hold,Reset Password Email Not Sending,0.0,0.0,4.016666666666667
 CCZEN-45,Andrew Branagan,To Do,Product Data Import,0.0,0.0,0.0
 CCZEN-44,Andrew Branagan,In Progress,Product Data Review,0.0,0.0,0.0
-BR-186,Alex Russo,Ready for Live,Links on Clients Listing not Working,0.0,0.0,3.0
+BR-186,Denny Ferdiansyah,In Progress,Links on Clients Listing not Working,0.0,0.0,3.0
 BR-185,Denny Ferdiansyah,Backlog,Nightly Algolia reindex,0.0,0.0,3.0
 BR-173,Andrew Branagan,ESTIMATION,Feature List Link Display Change,0.0,0.0,0.0
 BR-128,Andrew Branagan,Ready for QA,BR Site Potential Vulnerability,0.0,0.0,0.0
-BDD-122,Alex Russo,In Progress,WB | Updated Build Plan,2.0,2.0,0.0
-BDD-42,Alex Russo,CLIENT QA,Phase 1 Sign-Off,0.016666666666666666,0.0,0.0
-BDD-34,Alex Russo,Ready for QA,Data Requirements Document,0.016666666666666666,0.0,0.5
-BDD-26,Agung Ajus,In Progress,INTERNAL | Capacity Planning,2.0,1.6666666666666667,0.3333333333333333
+BDD-128,Alex Russo,In Progress,Ideas - Define & Launch Data & AI Service Offerings,4.0,3.25,0.75
+BDD-126,Denny Ferdiansyah,In Progress,CC | Delivery Manifest Update,2.0,1.9833333333333334,0.016666666666666666
+BDD-125,Alex Russo,Triage,INTERNAL | Update HubSpot Knowledge Base,4.0,4.0,0.0
+BDD-124,Alex Russo,Backlog,Disaster Recovery Plan & Drill,0.0,0.0,0.0
+BDD-44,Denny Ferdiansyah,In Progress,Infrastructure Setup – Azure Environment Provisioning,0.0,0.0,0.0
+BDD-26,Agung Ajus,Failed Testing,INTERNAL | Capacity Planning,2.0,1.15,0.85
 BDD-25,Alex Russo,Triage,William Buck: Stewardship Platform,0.0,0.0,0.0

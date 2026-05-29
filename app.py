@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_caching import Cache  # <-- TAMBAHAN BARU: Import library Caching
 import requests
 from requests.auth import HTTPBasicAuth
 import pandas as pd
@@ -11,14 +12,17 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# --- KREDENSIAL API ---
+# --- KONFIGURASI CACHE (OPTIMASI SUPER NGEBUT) ---
+app.config['CACHE_TYPE'] = 'SimpleCache'
+app.config['CACHE_DEFAULT_TIMEOUT'] = 300  # Simpan memori selama 5 menit (300 detik)
+cache = Cache(app)
+
 CLOCKIFY_API_KEY = os.getenv('CLOCKIFY_API_KEY')
 WORKSPACE_ID = os.getenv('WORKSPACE_ID')
 JIRA_API_TOKEN = os.getenv('JIRA_API_TOKEN')
 JIRA_DOMAIN = 'https://bluerockdigital.atlassian.net'
 JIRA_EMAIL = 'agung.ajus@staroster.com'
 
-# --- DAFTAR TIM & USER ID ---
 team_users = {
     "Abu Baskara": "692cc9e25831f77701ac3344",
     "Agung Ajus": "69924903d96aea171725d0bf",
@@ -31,7 +35,6 @@ team_users = {
 }
 team_names = list(team_users.keys())
 
-# --- FUNGSI 1: SNIPER CLOCKIFY PAKE USER ID ---
 def fetch_clockify_realtime(start_date, end_date):
     start_iso = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
     end_iso = end_date.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -40,7 +43,7 @@ def fetch_clockify_realtime(start_date, end_date):
 
     for name, user_id in team_users.items():
         if user_id.startswith("<"): 
-            continue # Lewati yang belum punya ID
+            continue 
             
         url = f"https://api.clockify.me/api/v1/workspaces/{WORKSPACE_ID}/user/{user_id}/time-entries"
         params = {"start": start_iso, "end": end_iso, "page-size": 200}
@@ -64,7 +67,6 @@ def fetch_clockify_realtime(start_date, end_date):
             
     return pd.DataFrame(all_entries)
 
-# --- FUNGSI 2: TARIK DATA JIRA ---
 def fetch_jira_realtime():
     team_names_joined = '", "'.join(team_names)
     jql_query = f'assignee IN ("{team_names_joined}") AND statusCategory != Done'
@@ -95,8 +97,8 @@ def fetch_jira_realtime():
          
     return pd.DataFrame(jira_data)
 
-# --- FUNGSI 3: ENGINE UTAMA ---
 @app.route('/')
+@cache.cached(query_string=True) # <-- TAMBAHAN BARU: Simpan tampilan di memori berdasarkan filter (This Week/Last Week/dll)
 def dashboard():
     timeframe = request.args.get('timeframe', 'this_week')
     
@@ -116,7 +118,7 @@ def dashboard():
         start_date = today + timedelta(days=30) 
         end_date = today + timedelta(days=30)
         capacity_baseline = 40
-    else: # this_week
+    else: 
         start_date = start_of_this_week
         end_date = today
         capacity_baseline = 40
@@ -200,8 +202,8 @@ def dashboard():
 
         team_data.append({
             'name': name, 'initials': initials, 'time_spent': time_spent,
-            'billable_hrs': billable_hrs, # Variabel baru untuk HTML
-            'non_billable_hrs': non_billable_hrs, # Variabel baru untuk HTML
+            'billable_hrs': billable_hrs, 
+            'non_billable_hrs': non_billable_hrs, 
             'remaining': remaining, 'capacity': capacity, 'util_pct': util_pct,
             'status': status, 'color_var': color_var, 'badge_class': badge_class,
             'badge_text': badge_text, 'cap_abs': abs(capacity), 'baseline': capacity_baseline
@@ -217,7 +219,8 @@ def dashboard():
 
 @app.route('/api/sync', methods=['POST'])
 def sync_data():
-    return jsonify({"status": "success", "message": "Data tersinkronisasi!"})
+    cache.clear() # <-- TAMBAHAN BARU: Hapus memori saat tombol "Sync APIs" ditekan
+    return jsonify({"status": "success", "message": "Cache dibersihkan! Data tersinkronisasi live."})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

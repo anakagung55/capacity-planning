@@ -31,6 +31,65 @@ Abu Baskara,[BR-178]: Services Page List Layout Updates,2026-05-12T02:00:00Z,202
 Abu Baskara,[BR-120]: Division Page Block Layout Updates,2026-05-12T00:00:00Z,2026-05-12T02:00:00Z,True
 Abu Baskara,[CGSM-47]: Redesign for Corner Hotel Functions Page,2026-05-11T23:00:00Z,2026-05-12T00:00:00Z,False
 Abu Baskara,[EQ-61]: ESTIMATE: Investigate Maropost (Retail Express) Gift Voucher Function ,2026-05-11T22:00:00Z,2026-05-11T23:00:00Z,True
+Abu Baskara,[INT-250]: Research existing Cin7 Core Apps,2026-05-11T05:00:00Z,2026-05-11T06:00:00Z,False
+Abu Baskara,[BR-171]: Our Clients Listing Order,2026-05-11T02:00:00Z,2026-05-11T05:00:00Z,True
+Abu Baskara,[BR-170]: Investigate Team Members Order Logic,2026-05-11T01:00:00Z,2026-05-11T02:00:00Z,True
+Abu Baskara,[COFE-65]: Manifest App Tracking Info - New Shopify App,2026-05-10T23:00:00Z,2026-05-11T01:00:00Z,True
+Abu Baskara,[INT-252]: Mad Mex Mobile App PoC,2026-05-10T22:00:00Z,2026-05-10T23:00:00Z,False
+Abu Baskara,[CGSM-44]: Update homepage event banners to new style,2026-05-08T05:00:00Z,2026-05-08T06:00:00Z,True
+Abu Baskara,"[BR-119]: Default page ""Key Callout"" masthead block addition ",2026-05-08T02:00:00Z,2026-05-08T05:00:00Z,True
+Abu Baskara,"[COFE-65]: Manifest App Tracking Info - New Shopify App - prepare, test and push to production",2026-05-08T01:00:00Z,2026-05-08T02:00:00Z,True
+Abu Baskara,[NON-BILLABLE] Daily Standup,2026-05-08T00:30:00Z,2026-05-08T01:00:00Z,False
+Abu Baskara,"[COFE-57]: Update Shippit Account Logic - prepare, test and push to production",2026-05-07T23:00:00Z,2026-05-08T00:30:00Z,True
+Abu Baskara,[INT-193]: Standard SLA Document,2026-05-07T22:00:00Z,2026-05-07T23:00:00Z,True
+Abu Baskara,[BR-171]: Our Clients Listing Order,2026-05-07T05:00:00Z,2026-05-07T06:00:00Z,True
+Abu Baskara,[INT-212]: Xero Apps,2026-05-07T03:30:00Z,2026-05-07T05:00:00Z,False
+Abu Baskara,[COFE-65]: Manifest App Tracking Info - New Shopify App,2026-05-07T02:00:00Z,2026-05-07T03:30:00Z,True
+Abu Baskara,[BR-170]: Investigate Team Members Order Logic,2026-05-07T01:00:00Z,2026-05-07T02:00:00Z,True
+Abu Baskara,[NON-BILLABLE] Daily Standup,2026-05-07T00:30:00Z,2026-05-07T01:00:00Z,False
+Abu Baskara,[CGSM-49]: Corner Hotel Gigs Page - Cards Hover Text Colour Update,2026-05-07T00:00:00Z,2026-05-07T00:30:00Z,True
+Abu Baskara,[CGSM-46]: NSC - Update homepage event banners to new style,2026-05-06T23:00:00Z,2026-05-07T00:00:00Z,True
+Abu Baskara,[INT-247]: Review BlueRock Website Services,2026-05-06T22:00:00Z,2026-05-06T23:00:00Z,False
+Abu Baskara,[COFE-65]: Manifest App Tracking Info - New Shopify App,2026-05-06T04:00:00Z,2026-05-06T06:00:00Z,True
+Abu Baskara,[CGSM-48]: Investigate AI Chat Bot Function on Corner Hotel Website,2026-05-06T03:00:00Z,2026-05-06T04:00:00Z,True
+Abu Baskara,[BR-168]: User Onboarding: Check the Send Activation Email Config in PROD,2026-05-06T01:00:00Z,2026-05-06T03:00:00Z,True
+Abu Baskara,[BR-159]: User Permissions Issue - Saving User Permissions,2026-05-05T22:00:00Z,2026-05-06T01:00:00Z,True
+Abu Baskara,[CGSM-49]: Corner Hotel Gigs Page - Cards Hover Text Colour Update,2026-05-05T06:00:00Z,2026-05-05T07:00:00Z,True
+Abu Baskara,[COFE-65]: Manifest App Tracking Info - New Shopify App,2026-05-05T03:00:00Z,2026-05-05T06:00:00Z,True
+Abu Baskara,[COFE-57]: Update Shippit Account Logic,2026-05-04T22:00:00Z,2026-05-05T03:00:00Z,True
+Abu Baskara,[BR-161]: Investigate YAML Error Message,2026-05-04T03:00:00Z,2026-05-04T06:00:00Z,True
+Abu Baskara,[BR-159]: User Permissions Issue - Saving User Permissions,2026-05-04T02:00:00Z,2026-05-04T03:00:00Z,True
+Abu Baskara,[BR-159]: User Permissions Issue - Saving User Permissions,2026-05-04T00:30:00Z,2026-05-04T02:00:00Z,True
+Abu Baskara,Daily Standup,2026-05-04T00:00:00Z,2026-05-04T00:30:00Z,False
+Abu Baskara,[BR-159]: User Permissions Issue - Saving User Permissions,2026-05-03T23:30:00Z,2026-05-04T00:00:00Z,True
+Abu Baskara,[INT-226]: Cin7 App Idea: Photo → Purchase Order,2026-05-03T22:30:00Z,2026-05-03T23:30:00Z,False
+Abu Baskara,[BR-135]: Bluerock Prod Loading Speed Improvement,2026-05-03T22:00:00Z,2026-05-03T22:30:00Z,True
+Abu Baskara,Deploy to production & test (Weekly),2026-05-01T04:00:00Z,2026-05-01T06:00:00Z,False
+Abu Baskara,[BR-161]: Investigate YAML Error Message,2026-05-01T03:00:00Z,2026-05-01T04:00:00Z,False
+Abu Baskara,[BR-165]: Our People Listings - Meta Data not showing,2026-04-30T22:00:00Z,2026-05-01T03:00:00Z,False
+Abu Baskara,[BR-167]: Masthead CTAs - Need to Allow Anchor Links,2026-04-30T04:30:00Z,2026-04-30T06:00:00Z,False
+Abu Baskara,[BR-160]: Publish Website Custom Function Not Working,2026-04-30T02:30:00Z,2026-04-30T04:30:00Z,False
+Abu Baskara,[BR-166]: Button Displaying Incorrectly,2026-04-30T01:00:00Z,2026-04-30T02:30:00Z,False
+Abu Baskara,[NON-BILLABLE] Daily Standup,2026-04-30T00:30:00Z,2026-04-30T01:00:00Z,False
+Abu Baskara,[BR-163]: Masthead Images - Should not be Mandatory,2026-04-29T22:00:00Z,2026-04-30T00:30:00Z,False
+Abu Baskara,[BR-162]: Service Entry Type - Title Field Missing,2026-04-29T05:00:00Z,2026-04-29T06:00:00Z,False
+Abu Baskara,[BR-159]: User Permissions Issue - Saving User Permissions,2026-04-29T04:00:00Z,2026-04-29T05:00:00Z,False
+Abu Baskara,[BR-160]: Publish Website Custom Function Not Working,2026-04-29T03:00:00Z,2026-04-29T04:00:00Z,False
+Abu Baskara,[COFE-40]: Reset Password Email Not Sending,2026-04-29T01:00:00Z,2026-04-29T03:00:00Z,True
+Abu Baskara,[NON-BILLABLE] Daily Standup,2026-04-29T00:30:00Z,2026-04-29T01:00:00Z,False
+Abu Baskara,[BR-143]: BlueRock Website User Onboarding,2026-04-28T22:30:00Z,2026-04-29T00:30:00Z,False
+Abu Baskara,[CCWDB-56]: Site security - quick review,2026-04-28T22:00:00Z,2026-04-28T22:30:00Z,False
+Agung Ajus,[COFE-40]: Reset Password Email Not Sending,2026-05-26T05:45:00Z,2026-05-26T06:55:00Z,True
+Agung Ajus,[COFE-51]: Direct Printer Integration - Zebra Printers,2026-05-26T04:33:00Z,2026-05-26T05:35:00Z,True
+Agung Ajus,[BDD-26]: INTERNAL | Capacity Planning,2026-05-26T01:44:00Z,2026-05-26T03:59:00Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-26T01:00:00Z,2026-05-26T01:35:00Z,False
+Agung Ajus,[INT-243]: Web Idea: AI Readiness and Roadmap Tool,2026-05-25T23:43:00Z,2026-05-26T00:54:00Z,False
+Agung Ajus,[INT-269]: Automated Case study bot,2026-05-25T22:33:00Z,2026-05-25T23:23:00Z,False
+Agung Ajus,[BDD-26]: INTERNAL | Capacity Planning,2026-05-25T04:44:00Z,2026-05-25T06:32:00Z,True
+Agung Ajus,[INT-243]: Web Idea: AI Readiness and Roadmap Tool,2026-05-25T02:44:00Z,2026-05-25T04:32:00Z,False
+Agung Ajus,[INT-269]: Automated Case study bot,2026-05-25T01:02:00Z,2026-05-25T02:35:00Z,False
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-25T00:30:00Z,2026-05-25T01:00:00Z,False
+Agung Ajus,[INT-253]: Web UI Reporting Bot - Version 2,2026-05-24T22:47:00Z,2026-05-25T00:48:00Z,False
 Agung Ajus,[COFE-51]: Direct Printer Integration - Zebra Printers,2026-05-22T03:34:00Z,2026-05-22T07:32:00Z,True
 Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-22T00:30:00Z,2026-05-22T01:00:00Z,False
 Agung Ajus,[INT-253]: Web UI Reporting Bot - Version 2,2026-05-21T23:15:00Z,2026-05-22T01:54:00Z,False
@@ -68,6 +127,89 @@ Agung Ajus,[MMS-55]: Revamp Catering Page Design,2026-05-12T02:03:00Z,2026-05-12
 Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-12T00:30:00Z,2026-05-12T00:53:00Z,False
 Agung Ajus,[INT-253]: Web UI Reporting Bot - Version 2,2026-05-11T23:02:00Z,2026-05-12T01:22:00Z,False
 Agung Ajus,[WBSP-238]: POST-REVIEW: Technical Design Updates,2026-05-11T15:33:00Z,2026-05-11T17:33:00Z,True
+Agung Ajus,[INT-253]: Web UI Reporting Bot - Version 2,2026-05-11T06:10:00Z,2026-05-11T08:15:00Z,False
+Agung Ajus,[MMS-54]: Nutritional Calculator - Investigate Bounce Rate ,2026-05-11T05:50:00Z,2026-05-11T06:35:00Z,True
+Agung Ajus,[SPG-40]: New Venue Request - Change Name,2026-05-11T05:26:00Z,2026-05-11T05:56:00Z,True
+Agung Ajus,[MMS-51]: Franchise info pages,2026-05-11T03:31:00Z,2026-05-11T05:01:00Z,True
+Agung Ajus,[MMS-53]: Blog Page Image Scaling Issues,2026-05-11T01:42:00Z,2026-05-11T03:12:00Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-11T00:30:00Z,2026-05-11T01:00:00Z,False
+Agung Ajus,[INT-186]: Database cleaner automation,2026-05-08T05:22:00Z,2026-05-08T06:53:00Z,False
+Agung Ajus,[INT-243]: AI Readiness and Roadmap Tool,2026-05-08T03:43:00Z,2026-05-08T04:26:00Z,False
+Agung Ajus,[WBSP-229]: Confirm Power BI API rate limit (separate or shared) and whether incremental data load is the preferred approach.,2026-05-08T02:03:00Z,2026-05-08T04:44:00Z,True
+Agung Ajus,[KWD-44]: ESTIMATION: Product Tile and Image On/Off,2026-05-08T01:12:25Z,2026-05-08T01:44:25Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-08T01:00:00Z,2026-05-08T01:28:00Z,False
+Agung Ajus,[INT-237]: Web UI Reporting Bot,2026-05-07T22:53:00Z,2026-05-08T01:14:00Z,False
+Agung Ajus,[WBSP-229]: Confirm Power BI API rate limit (separate or shared) and whether incremental data load is the preferred approach.,2026-05-07T02:42:00Z,2026-05-07T05:21:00Z,True
+Agung Ajus,[KWD-44]: ESTIMATION: Product Tile and Image On/Off,2026-05-07T01:55:00Z,2026-05-07T03:03:00Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-07T00:44:00Z,2026-05-07T00:54:00Z,False
+Agung Ajus,[INT-237]: Web UI Reporting Bot,2026-05-06T23:53:00Z,2026-05-07T02:42:00Z,False
+Agung Ajus,[WB-2]: WB - Security White Paper,2026-05-06T22:23:00Z,2026-05-06T23:13:00Z,True
+Agung Ajus,[INT-237]: Web UI Reporting Bot,2026-05-06T01:12:00Z,2026-05-06T06:52:00Z,False
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-06T00:30:00Z,2026-05-06T01:00:00Z,False
+Agung Ajus,[COFE-78]: ESTIMATION: Data Warehouse and Business Analytics,2026-05-05T04:44:00Z,2026-05-05T06:45:00Z,False
+Agung Ajus,[WB-2]: WB - Security White Paper,2026-05-05T02:23:00Z,2026-05-05T04:43:00Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-05T01:30:00Z,2026-05-05T02:00:00Z,False
+Agung Ajus,[INT-215]: The SMB Chief of Staff,2026-05-05T00:02:00Z,2026-05-05T02:24:00Z,False
+Agung Ajus,[INT-237]: Web UI Reporting Bot,2026-05-04T04:23:00Z,2026-05-04T06:15:00Z,False
+Agung Ajus,[INT-243]: AI Readiness and Roadmap Tool,2026-05-04T02:48:55Z,2026-05-04T03:49:55Z,False
+Agung Ajus,[COFE-78]: ESTIMATION: Data Warehouse and Business Analytics,2026-05-04T01:03:00Z,2026-05-04T03:33:00Z,False
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-04T00:00:00Z,2026-05-04T00:30:00Z,False
+Agung Ajus,[INT-241]: AI SaaS Micro Service Ideas,2026-05-03T03:08:47Z,2026-05-03T04:09:47Z,False
+Agung Ajus,[INT-189]: AEO/GEO Service Offering,2026-05-03T01:57:00Z,2026-05-03T03:45:00Z,False
+Agung Ajus,[INT-237]: Web UI Reporting Bot,2026-05-02T23:40:00Z,2026-05-03T01:48:00Z,False
+Agung Ajus,[KWD-44]: ESTIMATION: Product Tile and Image On/Off,2026-05-01T08:36:50Z,2026-05-01T09:27:50Z,True
+Agung Ajus,[INT-120]: Vie Capital Rebuild Scope,2026-05-01T08:02:00Z,2026-05-01T08:33:00Z,False
+Agung Ajus,[INT-130]: SCMR - SEO,2026-05-01T01:22:00Z,2026-05-01T04:55:00Z,False
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-05-01T00:30:00Z,2026-05-01T01:25:00Z,False
+Agung Ajus,[HBS-8]: Hawker Brownlow - Email Account Domain,2026-04-30T08:29:00Z,2026-04-30T08:52:00Z,True
+Agung Ajus,[INT-203]: SCMR - Bot forms ,2026-04-30T03:55:00Z,2026-04-30T06:35:00Z,False
+Agung Ajus,[SPG-40]: New Venue Request - Change Name,2026-04-30T01:12:00Z,2026-04-30T03:34:00Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-04-30T00:30:00Z,2026-04-30T01:00:00Z,False
+Agung Ajus,[HB-225]: Fix Security Vulnerability on Database,2026-04-29T22:03:00Z,2026-04-30T00:19:00Z,True
+Agung Ajus,[HB-225]: Fix Security Vulnerability on Database,2026-04-29T14:44:00Z,2026-04-29T15:19:00Z,True
+Agung Ajus,[INT-186]: Database cleaner automation,2026-04-29T13:19:00Z,2026-04-29T14:56:00Z,False
+Agung Ajus,[INT-203]: SCMR - Bot forms ,2026-04-29T09:03:00Z,2026-04-29T10:13:00Z,False
+Agung Ajus,[COFE-43]: DDOS Server Attack,2026-04-29T03:51:16Z,2026-04-29T05:33:16Z,True
+Agung Ajus,[INT-186]: Database cleaner automation,2026-04-29T02:50:16Z,2026-04-29T03:51:16Z,False
+Agung Ajus,[HBS-12]: BRIGANCE OMS - change password function is not working,2026-04-29T02:29:23Z,2026-04-29T02:50:23Z,True
+Agung Ajus,[HBS-10]: BRIGANCE OMS - Send User Details email function is not working,2026-04-29T02:07:00Z,2026-04-29T02:29:00Z,True
+Agung Ajus,[BR-130]: BlueRock Website SSL Cert Management,2026-04-29T00:56:44Z,2026-04-29T01:56:44Z,True
+Agung Ajus,[NON-BILLABLE]: DAT Daily Stand-Up,2026-04-29T00:30:00Z,2026-04-29T00:56:00Z,False
+Agung Ajus,[SPG-40]: New Venue Request - Change Name,2026-04-28T23:50:52Z,2026-04-29T00:09:52Z,True
+Agung Ajus,[GSSHOP-43]: Add Remaining Products to Global Spill Product Import,2026-04-28T09:36:58Z,2026-04-28T09:37:58Z,True
+Agung Ajus,[HBS-13]: Hawker Brownlow - MS365 Permissions Update,2026-04-28T07:07:00Z,2026-04-28T07:43:00Z,True
+Agung Ajus,[HB-225]: Fix Security Vulnerability on Database,2026-04-28T06:03:00Z,2026-04-28T06:45:00Z,True
+Alex Russo,,2026-05-28T04:36:00Z,2026-05-28T05:06:00Z,False
+Alex Russo,"All Natural, Two Birds Talking, HubSpot items.",2026-05-28T04:06:00Z,2026-05-28T04:36:00Z,False
+Alex Russo,[BDD-132]: BlueRock | BRNZ Website Build Webflow,2026-05-28T03:36:00Z,2026-05-28T04:06:00Z,True
+Alex Russo,[COFE-51]: Direct Printer Integration - Zebra Printers,2026-05-28T03:05:00Z,2026-05-28T03:20:00Z,True
+Alex Russo,[COFE-40]: Reset Password Email Not Sending,2026-05-28T03:03:00Z,2026-05-28T03:18:00Z,True
+Alex Russo,[COFE-51]: Direct Printer Integration - Zebra Printers,2026-05-28T01:31:00Z,2026-05-28T01:46:00Z,True
+Alex Russo,[BDD-21]: HOMIE | Operations Uplift Statement of Work,2026-05-28T01:28:00Z,2026-05-28T01:38:00Z,True
+Alex Russo,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-28T01:16:00Z,2026-05-28T01:31:00Z,True
+Alex Russo,[BDD-130]: TicketVerse | AI Offerings and Governance,2026-05-28T00:51:00Z,2026-05-28T02:21:00Z,True
+Alex Russo,daily standup,2026-05-28T00:07:00Z,2026-05-28T01:07:00Z,False
+Alex Russo,JIRA admin and ticket clearout,2026-05-27T23:07:00Z,2026-05-28T00:52:00Z,False
+Alex Russo,[BDD-21]: HOMIE | Operations Uplift Statement of Work,2026-05-27T22:57:00Z,2026-05-27T23:12:00Z,True
+Alex Russo,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-27T22:56:00Z,2026-05-27T23:11:00Z,True
+Alex Russo,[BDD-122]: WB | Updated Build Plan,2026-05-27T05:40:00Z,2026-05-27T06:10:00Z,True
+Alex Russo,Daily Standup,2026-05-27T05:02:07Z,2026-05-27T05:32:07Z,False
+Alex Russo,[BDD-128]: Ideas - Define & Launch Data & AI Service Offerings,2026-05-27T04:55:00Z,2026-05-27T05:10:00Z,True
+Alex Russo,[BDD-128]: Ideas - Define & Launch Data & AI Service Offerings,2026-05-27T04:26:00Z,2026-05-27T04:56:00Z,True
+Alex Russo,[BDD-26]: INTERNAL | Capacity Planning,2026-05-27T04:05:00Z,2026-05-27T04:20:00Z,True
+Alex Russo,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-27T03:33:00Z,2026-05-27T03:48:00Z,True
+Alex Russo,[INT-262]: HTML Document Hosting Query,2026-05-27T02:46:00Z,2026-05-27T03:01:00Z,False
+Alex Russo,[BDD-27]: INTERNAL | Define & Launch CRM Offerings,2026-05-27T02:39:00Z,2026-05-27T03:39:00Z,False
+Alex Russo,Sales Follow Ups on HubSpot/Lark Meeting,2026-05-27T00:30:00Z,2026-05-27T01:30:00Z,False
+Alex Russo,Cin7/Xero/Zebra/SFTP Server,2026-05-27T00:00:00Z,2026-05-27T01:00:00Z,True
+Alex Russo,[BDD-24]: BlueRock | NZ Website Estimate,2026-05-26T23:35:00Z,2026-05-27T00:05:00Z,False
+Alex Russo,[BDD-26]: INTERNAL | Capacity Planning,2026-05-26T23:24:00Z,2026-05-26T23:39:00Z,False
+Alex Russo,Open JIRA tickets/Lunch,2026-05-26T23:00:00Z,2026-05-27T01:30:00Z,False
+Alex Russo,,2026-05-26T02:30:00Z,2026-05-26T03:30:00Z,False
+Alex Russo,,2026-05-26T02:00:00Z,2026-05-26T03:30:00Z,False
+Alex Russo,,2026-05-26T00:30:00Z,2026-05-26T02:00:00Z,False
+Alex Russo,,2026-05-25T23:30:00Z,2026-05-26T01:30:00Z,True
+Alex Russo,,2026-05-25T23:00:00Z,2026-05-26T00:30:00Z,False
 Alex Russo,[BDD-24]: BlueRock | NZ Website Estimate,2026-05-25T05:47:00Z,2026-05-25T06:17:00Z,False
 Alex Russo,[BDD-26]: INTERNAL | Capacity Planning,2026-05-25T05:44:00Z,2026-05-25T06:14:00Z,False
 Alex Russo,,2026-05-25T04:00:00Z,2026-05-25T04:30:00Z,False
@@ -142,6 +284,67 @@ Alex Russo,Daily Standup,2026-05-12T01:00:00Z,2026-05-12T01:30:00Z,False
 Alex Russo,Status Report,2026-05-12T00:30:00Z,2026-05-12T01:00:00Z,True
 Alex Russo,Complete Coffee Ops,2026-05-11T23:30:00Z,2026-05-12T00:30:00Z,False
 Alex Russo,Status Report for Ben,2026-05-11T23:00:00Z,2026-05-11T23:30:00Z,True
+Alex Russo,CRM Offerings,2026-05-11T02:30:00Z,2026-05-11T03:15:00Z,False
+Alex Russo,"Weekly Plan
+Daily Standup",2026-05-11T01:30:00Z,2026-05-11T02:30:00Z,False
+Alex Russo,JIRA and Project Admin,2026-05-11T01:00:00Z,2026-05-11T02:00:00Z,False
+Alex Russo,DOP prepIMTComplete Coffee Process Operations,2026-05-11T00:30:00Z,2026-05-11T03:15:00Z,False
+Alex Russo,"Design Deliverables
+William Buck Meeting",2026-05-10T23:00:00Z,2026-05-11T01:30:00Z,True
+Alex Russo,,2026-05-08T02:30:00Z,2026-05-08T04:30:00Z,False
+Alex Russo,,2026-05-08T02:00:00Z,2026-05-08T02:30:00Z,False
+Alex Russo,,2026-05-08T01:30:00Z,2026-05-08T03:30:00Z,False
+Alex Russo,,2026-05-08T01:00:00Z,2026-05-08T01:30:00Z,True
+Alex Russo,,2026-05-08T00:30:00Z,2026-05-08T01:00:00Z,True
+Alex Russo,,2026-05-07T23:30:00Z,2026-05-08T00:30:00Z,False
+Alex Russo,,2026-05-07T23:00:00Z,2026-05-08T01:30:00Z,True
+Alex Russo,complete coffee prep and mockup designs,2026-05-07T04:00:00Z,2026-05-07T05:30:00Z,False
+Alex Russo,hubspot meeting,2026-05-07T03:00:00Z,2026-05-07T04:00:00Z,False
+Alex Russo,jira tickets updates,2026-05-07T02:00:00Z,2026-05-07T03:00:00Z,False
+Alex Russo,daily standup,2026-05-07T01:30:00Z,2026-05-07T02:30:00Z,False
+Alex Russo,update of all documentation and summarising technical workshop meeting minutes,2026-05-07T00:00:00Z,2026-05-07T02:00:00Z,True
+Alex Russo,HubSpot Offerings,2026-05-06T23:00:00Z,2026-05-07T00:30:00Z,False
+Alex Russo,,2026-05-06T02:00:00Z,2026-05-06T02:30:00Z,False
+Alex Russo,,2026-05-06T01:00:00Z,2026-05-06T02:00:00Z,False
+Alex Russo,,2026-05-06T00:30:00Z,2026-05-06T01:00:00Z,False
+Alex Russo,"workshop, workshop prep, meeting minutes",2026-05-06T00:00:00Z,2026-05-06T03:00:00Z,True
+Alex Russo,,2026-05-05T23:00:00Z,2026-05-06T00:00:00Z,False
+Alex Russo,jira management and open work items,2026-05-04T23:00:00Z,2026-05-05T01:00:00Z,False
+Alex Russo,homie interview and note taking,2026-05-04T23:00:00Z,2026-05-05T00:00:00Z,True
+Alex Russo,daily standup,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,False
+Alex Russo,"Design documentation, technical workshop preperation, responses to questions",2026-05-04T23:00:00Z,2026-05-05T02:00:00Z,True
+Alex Russo,Monthly meeting,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,True
+Alex Russo,"GROC, Complete Coffee Process automation
+Kolikof email",2026-05-04T23:00:00Z,2026-05-05T01:00:00Z,False
+Alex Russo,meeting with Will,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,True
+Alex Russo,Weekly Report,2026-05-04T05:00:00Z,2026-05-04T05:30:00Z,True
+Alex Russo,"Weekly Update
+Technical Workshop Prep
+Notifcations Workflow",2026-05-04T03:30:00Z,2026-05-04T05:30:00Z,True
+Alex Russo,"Finance Interview
+Operations Interview",2026-05-04T01:30:00Z,2026-05-04T03:30:00Z,True
+Alex Russo,"Total Care Physio
+OrthoTech Retainer Options",2026-05-04T01:00:00Z,2026-05-04T02:30:00Z,False
+Alex Russo,"Weekly Plan and Priorities
+Daily Standup",2026-05-04T00:30:00Z,2026-05-04T01:30:00Z,False
+Alex Russo,JIRA Updates on P1-P4,2026-05-03T23:00:00Z,2026-05-04T01:00:00Z,False
+Alex Russo,,2026-05-01T03:00:00Z,2026-05-01T04:00:00Z,False
+Alex Russo,,2026-05-01T02:30:00Z,2026-05-01T03:30:00Z,True
+Alex Russo,,2026-05-01T01:30:00Z,2026-05-01T02:30:00Z,True
+Alex Russo,,2026-05-01T00:30:00Z,2026-05-01T01:30:00Z,False
+Alex Russo,,2026-04-30T23:00:00Z,2026-05-01T02:00:00Z,False
+Alex Russo,,2026-04-30T07:00:00Z,2026-04-30T08:00:00Z,False
+Alex Russo,,2026-04-29T23:00:00Z,2026-04-30T07:30:00Z,False
+Alex Russo,,2026-04-29T05:45:00Z,2026-04-29T06:15:00Z,False
+Alex Russo,,2026-04-29T05:30:00Z,2026-04-29T05:45:00Z,True
+Alex Russo,"HubSpot Solutions Partner Accreditation
+Ai & Automation Apps",2026-04-29T02:00:00Z,2026-04-29T04:30:00Z,False
+Alex Russo,"wigs 1 x 1
+daily standup",2026-04-29T01:00:00Z,2026-04-29T02:30:00Z,False
+Alex Russo,,2026-04-28T23:00:00Z,2026-04-29T02:15:00Z,False
+Andrew Branagan,,2026-05-27T23:00:00Z,2026-05-28T07:00:00Z,False
+Andrew Branagan,,2026-05-26T23:00:00Z,2026-05-27T07:00:00Z,False
+Andrew Branagan,,2026-05-25T23:00:00Z,2026-05-26T07:00:00Z,False
 Andrew Branagan,,2026-05-24T23:00:00Z,2026-05-25T07:00:00Z,False
 Andrew Branagan,,2026-05-22T03:30:00Z,2026-05-22T06:30:00Z,False
 Andrew Branagan,,2026-05-22T02:15:00Z,2026-05-22T03:30:00Z,False
@@ -221,6 +424,125 @@ Andrew Branagan,,2026-05-11T23:00:00Z,2026-05-11T23:45:00Z,False
 Andrew Branagan,,2026-05-11T23:00:00Z,2026-05-11T23:45:00Z,False
 Andrew Branagan,,2026-05-11T23:00:00Z,2026-05-11T23:30:00Z,False
 Andrew Branagan,Smoke Testing Review,2026-05-11T23:00:00Z,2026-05-11T23:15:00Z,True
+Andrew Branagan,Square GL Tax Investigation,2026-05-10T23:00:00Z,2026-05-11T00:00:00Z,True
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-11T00:00:00Z,True
+Andrew Branagan,Smoke Test & Review of New Shippit Logic,2026-05-10T23:00:00Z,2026-05-10T23:30:00Z,True
+Andrew Branagan,Shopify ChannelWiz App Authentication & Review,2026-05-10T23:00:00Z,2026-05-10T23:45:00Z,True
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-10T23:30:00Z,False
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-10T23:15:00Z,False
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-10T23:15:00Z,True
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-10T23:15:00Z,True
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-10T23:45:00Z,False
+Andrew Branagan,,2026-05-10T23:00:00Z,2026-05-11T00:00:00Z,False
+Andrew Branagan,1Password Setup for Devs,2026-05-10T23:00:00Z,2026-05-10T23:45:00Z,False
+Andrew Branagan,BR-119 & BR-173,2026-05-10T23:00:00Z,2026-05-10T23:30:00Z,True
+Andrew Branagan,Shopify Tracking App Installation,2026-05-10T23:00:00Z,2026-05-10T23:30:00Z,True
+Andrew Branagan,,2026-05-08T06:00:00Z,2026-05-08T06:15:00Z,True
+Andrew Branagan,INT-244,2026-05-08T05:30:00Z,2026-05-08T06:00:00Z,False
+Andrew Branagan,,2026-05-08T05:00:00Z,2026-05-08T05:30:00Z,False
+Andrew Branagan,,2026-05-08T04:15:00Z,2026-05-08T05:00:00Z,True
+Andrew Branagan,,2026-05-08T03:45:00Z,2026-05-08T04:15:00Z,True
+Andrew Branagan,,2026-05-08T03:15:00Z,2026-05-08T03:45:00Z,False
+Andrew Branagan,,2026-05-08T02:45:00Z,2026-05-08T03:15:00Z,False
+Andrew Branagan,,2026-05-08T01:45:00Z,2026-05-08T02:45:00Z,True
+Andrew Branagan,,2026-05-08T01:15:00Z,2026-05-08T01:45:00Z,True
+Andrew Branagan,,2026-05-08T00:30:00Z,2026-05-08T01:30:00Z,False
+Andrew Branagan,,2026-05-08T00:00:00Z,2026-05-08T00:30:00Z,True
+Andrew Branagan,,2026-05-07T23:30:00Z,2026-05-08T00:30:00Z,True
+Andrew Branagan,,2026-05-07T23:00:00Z,2026-05-07T23:30:00Z,True
+Andrew Branagan,,2026-05-07T06:45:00Z,2026-05-07T07:00:00Z,True
+Andrew Branagan,,2026-05-07T06:15:00Z,2026-05-07T06:45:00Z,True
+Andrew Branagan,CGSM-46,2026-05-07T05:45:00Z,2026-05-07T06:15:00Z,True
+Andrew Branagan,H Drive Meeting,2026-05-07T05:15:00Z,2026-05-07T05:45:00Z,False
+Andrew Branagan,,2026-05-07T04:45:00Z,2026-05-07T05:15:00Z,False
+Andrew Branagan,,2026-05-07T04:15:00Z,2026-05-07T04:45:00Z,True
+Andrew Branagan,,2026-05-07T03:45:00Z,2026-05-07T04:15:00Z,True
+Andrew Branagan,,2026-05-07T02:15:00Z,2026-05-07T03:45:00Z,True
+Andrew Branagan,,2026-05-07T01:15:00Z,2026-05-07T02:15:00Z,True
+Andrew Branagan,,2026-05-07T00:45:00Z,2026-05-07T01:15:00Z,False
+Andrew Branagan,Puopolo Quote,2026-05-07T00:15:00Z,2026-05-07T00:45:00Z,False
+Andrew Branagan,,2026-05-07T00:00:00Z,2026-05-07T00:15:00Z,True
+Andrew Branagan,,2026-05-06T23:30:00Z,2026-05-07T00:00:00Z,True
+Andrew Branagan,,2026-05-06T23:00:00Z,2026-05-06T23:30:00Z,True
+Andrew Branagan,,2026-05-06T06:15:00Z,2026-05-06T06:45:00Z,False
+Andrew Branagan,,2026-05-06T06:00:00Z,2026-05-06T06:15:00Z,True
+Andrew Branagan,,2026-05-06T05:30:00Z,2026-05-06T06:00:00Z,True
+Andrew Branagan,Website Audit Review,2026-05-06T05:00:00Z,2026-05-06T05:45:00Z,True
+Andrew Branagan,CGSM-49,2026-05-06T04:45:00Z,2026-05-06T05:00:00Z,True
+Andrew Branagan,IMT Review,2026-05-06T04:15:00Z,2026-05-06T04:45:00Z,False
+Andrew Branagan,"1hr Billable
+1hr Non-Billable - environment setup",2026-05-06T02:15:00Z,2026-05-06T04:15:00Z,True
+Andrew Branagan,,2026-05-06T02:00:00Z,2026-05-06T02:15:00Z,True
+Andrew Branagan,,2026-05-06T01:30:00Z,2026-05-06T02:00:00Z,False
+Andrew Branagan,,2026-05-06T01:00:00Z,2026-05-06T01:30:00Z,False
+Andrew Branagan,,2026-05-05T23:15:00Z,2026-05-06T01:00:00Z,True
+Andrew Branagan,,2026-05-05T23:00:00Z,2026-05-05T23:15:00Z,True
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-05T00:30:00Z,True
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,False
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,False
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,False
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-05T00:15:00Z,False
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-05T00:15:00Z,True
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,True
+Andrew Branagan,,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,True
+Andrew Branagan,BR-168,2026-05-04T23:00:00Z,2026-05-04T23:15:00Z,True
+Andrew Branagan,IMT SoW Updates,2026-05-04T23:00:00Z,2026-05-04T23:45:00Z,False
+Andrew Branagan,VC-38 QA,2026-05-04T23:00:00Z,2026-05-04T23:30:00Z,True
+Andrew Branagan,,2026-05-04T06:00:00Z,2026-05-04T07:00:00Z,False
+Andrew Branagan,IMT SoW Review,2026-05-04T05:30:00Z,2026-05-04T06:00:00Z,False
+Andrew Branagan,,2026-05-04T05:00:00Z,2026-05-04T05:30:00Z,True
+Andrew Branagan,Shippit Order Not Syncing,2026-05-04T04:45:00Z,2026-05-04T05:00:00Z,True
+Andrew Branagan,,2026-05-04T04:15:00Z,2026-05-04T04:45:00Z,False
+Andrew Branagan,,2026-05-04T03:15:00Z,2026-05-04T04:15:00Z,True
+Andrew Branagan,BR Go-Live Smoke Testing,2026-05-04T02:45:00Z,2026-05-04T03:15:00Z,False
+Andrew Branagan,,2026-05-04T01:45:00Z,2026-05-04T05:00:00Z,True
+Andrew Branagan,,2026-05-03T23:00:00Z,2026-05-04T00:00:00Z,True
+Andrew Branagan,,2026-05-01T06:45:00Z,2026-05-01T07:00:00Z,True
+Andrew Branagan,,2026-05-01T06:00:00Z,2026-05-01T06:15:00Z,True
+Andrew Branagan,,2026-05-01T05:30:00Z,2026-05-01T06:00:00Z,False
+Andrew Branagan,,2026-05-01T05:00:00Z,2026-05-01T05:30:00Z,True
+Andrew Branagan,,2026-05-01T04:45:00Z,2026-05-01T05:00:00Z,False
+Andrew Branagan,,2026-05-01T04:15:00Z,2026-05-01T04:45:00Z,True
+Andrew Branagan,,2026-05-01T03:45:00Z,2026-05-01T04:15:00Z,True
+Andrew Branagan,,2026-05-01T03:15:00Z,2026-05-01T04:00:00Z,True
+Andrew Branagan,,2026-05-01T02:45:00Z,2026-05-01T03:15:00Z,True
+Andrew Branagan,,2026-05-01T01:15:00Z,2026-05-01T02:45:00Z,True
+Andrew Branagan,,2026-05-01T00:15:00Z,2026-05-01T01:15:00Z,False
+Andrew Branagan,,2026-04-30T23:30:00Z,2026-05-01T00:30:00Z,False
+Andrew Branagan,,2026-04-30T23:00:00Z,2026-04-30T23:45:00Z,False
+Andrew Branagan,Internal QA,2026-04-30T08:00:00Z,2026-04-30T08:30:00Z,True
+Andrew Branagan,,2026-04-30T07:45:00Z,2026-04-30T08:00:00Z,True
+Andrew Branagan,,2026-04-30T07:15:00Z,2026-04-30T07:45:00Z,True
+Andrew Branagan,,2026-04-30T07:00:00Z,2026-04-30T07:15:00Z,True
+Andrew Branagan,COFE-77: Xero Integration Issues,2026-04-30T06:45:00Z,2026-04-30T07:00:00Z,True
+Andrew Branagan,,2026-04-30T06:00:00Z,2026-04-30T06:15:00Z,True
+Andrew Branagan,,2026-04-30T05:45:00Z,2026-04-30T06:00:00Z,True
+Andrew Branagan,,2026-04-30T05:15:00Z,2026-04-30T05:45:00Z,False
+Andrew Branagan,,2026-04-30T04:00:00Z,2026-04-30T05:15:00Z,True
+Andrew Branagan,,2026-04-30T03:00:00Z,2026-04-30T04:00:00Z,False
+Andrew Branagan,,2026-04-30T01:00:00Z,2026-04-30T03:00:00Z,False
+Andrew Branagan,,2026-04-30T00:45:00Z,2026-04-30T01:00:00Z,True
+Andrew Branagan,,2026-04-29T23:15:00Z,2026-04-30T00:45:00Z,True
+Andrew Branagan,,2026-04-29T23:00:00Z,2026-04-29T23:15:00Z,True
+Andrew Branagan,COFE-40 QA,2026-04-29T06:30:00Z,2026-04-29T07:00:00Z,True
+Andrew Branagan,,2026-04-29T06:00:00Z,2026-04-29T06:30:00Z,True
+Andrew Branagan,,2026-04-29T05:45:00Z,2026-04-29T06:00:00Z,False
+Andrew Branagan,DNS Issue Investigation,2026-04-29T05:15:00Z,2026-04-29T05:45:00Z,True
+Andrew Branagan,,2026-04-29T04:45:00Z,2026-04-29T05:15:00Z,True
+Andrew Branagan,Xero Customer Branding Update,2026-04-29T04:30:00Z,2026-04-29T04:45:00Z,True
+Andrew Branagan,,2026-04-29T03:30:00Z,2026-04-29T04:30:00Z,True
+Andrew Branagan,,2026-04-29T03:00:00Z,2026-04-29T03:45:00Z,True
+Andrew Branagan,,2026-04-29T02:00:00Z,2026-04-29T04:30:00Z,False
+Andrew Branagan,,2026-04-29T01:00:00Z,2026-04-29T01:30:00Z,False
+Andrew Branagan,,2026-04-28T23:00:00Z,2026-04-29T01:00:00Z,True
+Andrew Branagan,,2026-04-28T06:30:00Z,2026-04-28T07:00:00Z,False
+Andrew Branagan,,2026-04-28T06:00:00Z,2026-04-28T06:30:00Z,True
+Denny Ferdiansyah,[BDD-122]: WB | Updated Build Plan,2026-05-27T03:27:06Z,2026-05-27T05:09:06Z,True
+Denny Ferdiansyah,[BDD-126]: CC | Delivery Manifest Update,2026-05-27T03:01:25Z,2026-05-27T03:27:25Z,True
+Denny Ferdiansyah,[BDD-126]: CC | Delivery Manifest Update,2026-05-26T08:00:00Z,2026-05-26T09:00:00Z,True
+Denny Ferdiansyah,[BDD-126]:  ESTIMATION: CC | Delivery Manifest Update,2026-05-26T04:56:33Z,2026-05-26T04:57:33Z,True
+Denny Ferdiansyah,[BDD-122]: review William buck task & add a duedate for each task,2026-05-25T12:00:00Z,2026-05-25T16:50:00Z,True
+Denny Ferdiansyah,[BR-183] Testing & Deployment to production,2026-05-25T11:00:00Z,2026-05-25T12:00:00Z,True
 Denny Ferdiansyah,"Monitoring Server, Setup schedular for auto file deletion for more than 30 days, remove all outdated logs.",2026-05-25T09:00:00Z,2026-05-25T11:00:00Z,True
 Denny Ferdiansyah,[INT-208]: Create document: how to setup security on AWS Cloudfront,2026-05-25T01:00:00Z,2026-05-25T02:00:00Z,False
 Denny Ferdiansyah,[HB-237]: Create document for XERO integration & how to get the xero credential,2026-05-25T00:00:00Z,2026-05-25T01:00:00Z,True
@@ -262,69 +584,51 @@ Denny Ferdiansyah,[VC-41]: Update Bank Account Details - Invoice request - 20262
 Denny Ferdiansyah,"[SPG-40]: Find out production database access, checking on forge, linode & Azure",2026-05-12T02:47:00Z,2026-05-12T04:17:00Z,False
 Denny Ferdiansyah,[GSSHOP-44]: Export Shopify Product SKUs and their Linked Product Collections,2026-05-12T02:01:52Z,2026-05-12T02:46:52Z,True
 Denny Ferdiansyah,[GSSHOP-44]: Export Shopify Product SKUs and their Linked Product Collections,2026-05-12T00:00:00Z,2026-05-12T02:00:00Z,True
-Kate Wiggins,Ben meeting,2026-05-25T08:45:00Z,2026-05-25T09:15:00Z,True
-Kate Wiggins,,2026-05-25T08:30:00Z,2026-05-25T08:45:00Z,True
-Kate Wiggins,,2026-05-25T07:00:00Z,2026-05-25T08:30:00Z,True
-Kate Wiggins,,2026-05-25T06:30:00Z,2026-05-25T07:00:00Z,False
-Kate Wiggins,"BRNZ website chat & costing
-Starkids - SEO check and site eComm automation test",2026-05-25T06:00:00Z,2026-05-25T07:00:00Z,False
-Kate Wiggins,,2026-05-25T05:00:00Z,2026-05-25T06:00:00Z,False
-Kate Wiggins,[INT-265]: Shopify - Templated Qwilr contracts and costing,2026-05-25T04:00:00Z,2026-05-25T05:00:00Z,False
-Kate Wiggins,[INT-269]: Automated Case study bot,2026-05-25T03:00:00Z,2026-05-25T03:30:00Z,False
-Kate Wiggins,[BDD-34]: Data Requirements Document,2026-05-25T02:00:00Z,2026-05-25T02:30:00Z,True
-Kate Wiggins,[INT-253]: Web Idea: Web UI Reporting Bot - Version 2,2026-05-25T01:00:00Z,2026-05-25T02:00:00Z,False
-Kate Wiggins,,2026-05-22T03:30:00Z,2026-05-22T04:30:00Z,False
-Kate Wiggins,,2026-05-22T01:30:00Z,2026-05-22T03:30:00Z,False
-Kate Wiggins,Claude design case,2026-05-22T01:00:00Z,2026-05-22T03:00:00Z,False
-Kate Wiggins,,2026-05-22T00:00:00Z,2026-05-22T02:00:00Z,False
-Kate Wiggins,,2026-05-21T23:00:00Z,2026-05-22T00:30:00Z,True
-Kate Wiggins,,2026-05-21T05:00:00Z,2026-05-21T06:00:00Z,True
-Kate Wiggins,,2026-05-21T04:00:00Z,2026-05-21T05:00:00Z,False
-Kate Wiggins,,2026-05-21T03:00:00Z,2026-05-21T04:00:00Z,False
-Kate Wiggins,BRNZ / Web / NPS cost,2026-05-21T02:00:00Z,2026-05-21T03:00:00Z,False
-Kate Wiggins,,2026-05-21T01:00:00Z,2026-05-21T02:00:00Z,False
-Kate Wiggins,,2026-05-20T23:00:00Z,2026-05-21T02:00:00Z,True
-Kate Wiggins,"[INT-267]: BRNZ - Webflow site
-Deliberate practice - SEO report",2026-05-20T07:11:00Z,2026-05-20T08:11:00Z,False
-Kate Wiggins,"Emails
-- Cythera
-- DP (testimonial and sales
-- Corner Hotel followup",2026-05-20T06:29:00Z,2026-05-20T07:29:00Z,False
-Kate Wiggins,,2026-05-20T05:59:00Z,2026-05-20T06:29:00Z,False
-Kate Wiggins,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-20T05:44:00Z,2026-05-20T05:59:00Z,False
-Kate Wiggins,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-20T05:43:00Z,2026-05-20T07:13:00Z,False
-Kate Wiggins,[INT-265]: Shopify - Templated qwilr contracts and costing ,2026-05-20T05:04:00Z,2026-05-20T07:04:00Z,False
-Kate Wiggins,Shopify collateral,2026-05-19T23:00:00Z,2026-05-19T23:45:00Z,False
-Kate Wiggins,[BDD-23]: NPS | Lark Rebrand Estimate,2026-05-19T05:42:00Z,2026-05-19T06:42:00Z,False
-Kate Wiggins,,2026-05-19T03:30:00Z,2026-05-19T04:30:00Z,False
-Kate Wiggins,Lark contract,2026-05-19T02:30:00Z,2026-05-19T03:30:00Z,False
-Kate Wiggins,,2026-05-19T01:30:00Z,2026-05-19T02:30:00Z,False
-Kate Wiggins,"Hubspot contract review.
-BRD website - meeting and strategy  (with sarah and james)
-Shopify offering",2026-05-19T00:00:00Z,2026-05-19T03:00:00Z,False
-Kate Wiggins,,2026-05-18T23:00:00Z,2026-05-19T00:30:00Z,True
-Kate Wiggins,,2026-05-17T23:00:00Z,2026-05-18T07:00:00Z,False
-Kate Wiggins,,2026-05-15T05:30:00Z,2026-05-15T06:15:00Z,True
-Kate Wiggins,,2026-05-15T05:00:00Z,2026-05-15T06:00:00Z,True
-Kate Wiggins,,2026-05-15T04:00:00Z,2026-05-15T04:01:00Z,False
-Kate Wiggins,Contracts,2026-05-15T03:00:00Z,2026-05-15T04:30:00Z,False
-Kate Wiggins,,2026-05-15T02:30:00Z,2026-05-15T03:30:00Z,False
-Kate Wiggins,Cythera - NPS meeting - Corner emails/scope,2026-05-14T23:30:00Z,2026-05-15T02:30:00Z,False
-Kate Wiggins,BUG,2026-05-14T23:00:00Z,2026-05-15T00:00:00Z,True
-Kate Wiggins,BR Site - contract review,2026-05-14T02:30:00Z,2026-05-14T05:30:00Z,False
-Kate Wiggins,,2026-05-14T02:00:00Z,2026-05-14T03:00:00Z,False
-Kate Wiggins,,2026-05-14T01:00:00Z,2026-05-14T02:00:00Z,False
-Kate Wiggins,,2026-05-13T23:00:00Z,2026-05-14T01:30:00Z,True
-Kate Wiggins,Email for monthly plan - intro into hubspot work,2026-05-13T04:30:00Z,2026-05-13T05:30:00Z,True
-Kate Wiggins,,2026-05-13T04:00:00Z,2026-05-13T05:30:00Z,False
-Kate Wiggins,Cythera - comms - WEebsite bot - B&M comms,2026-05-13T02:00:00Z,2026-05-13T04:30:00Z,False
-Kate Wiggins,Workshop + prep,2026-05-13T00:00:00Z,2026-05-13T02:30:00Z,True
-Kate Wiggins,WB retro,2026-05-12T23:00:00Z,2026-05-13T00:00:00Z,False
-Kate Wiggins,Marketing bot,2026-05-12T02:00:00Z,2026-05-12T04:30:00Z,False
-Kate Wiggins,Claude design prompt - functions page - discovery on process for pushing out quick edits,2026-05-12T01:30:00Z,2026-05-12T02:00:00Z,True
-Kate Wiggins,,2026-05-12T00:30:00Z,2026-05-12T02:30:00Z,True
-Kate Wiggins,,2026-05-11T23:30:00Z,2026-05-12T00:30:00Z,False
-Kate Wiggins,,2026-05-11T23:00:00Z,2026-05-12T00:30:00Z,False
+Denny Ferdiansyah,"Checkin SSH, Firewall for old access",2026-05-11T03:00:00Z,2026-05-11T07:00:00Z,False
+Denny Ferdiansyah,"Cleaning Access for Linode, Kinsta, Forge, AWS.",2026-05-10T23:00:00Z,2026-05-11T03:00:00Z,False
+Denny Ferdiansyah,[BR-141]: Change build account & Checking Production Service can be shutdown,2026-05-08T13:00:00Z,2026-05-08T18:00:00Z,False
+Denny Ferdiansyah,"Review Release for BR-159 & COFE-57, COFE-65",2026-05-08T12:00:00Z,2026-05-08T13:00:00Z,False
+Denny Ferdiansyah,[INT-119]: Preparing for N8N access for team,2026-05-07T23:00:00Z,2026-05-08T00:00:00Z,False
+Denny Ferdiansyah,"[WBSP-231]: Confirm with development team which CIS benchmark level (1, 2, or 3) applies to the platform.",2026-05-07T17:30:00Z,2026-05-07T18:40:00Z,True
+Denny Ferdiansyah,[WBSP-230]:Confirm and document the outage notification mechanism (portal alert and/or email) for queued submissions.,2026-05-07T16:30:00Z,2026-05-07T17:30:00Z,True
+Denny Ferdiansyah,[WBSP-233]: Provide written notice period terms for hosting cost changes (e.g. 30/60/90 days) as requested by Primoz.,2026-05-07T15:50:00Z,2026-05-07T16:30:00Z,True
+Denny Ferdiansyah,"[WBSP-232]: Confirm endpoint security tooling being deployed (CrowdStrike, Falcon, or equivalent).",2026-05-07T15:50:00Z,2026-05-07T16:30:00Z,True
+Denny Ferdiansyah,[WBSP-234]: Determine Xero sandbox/demo account approach for staging and testing; confirm chart of accounts mapping.,2026-05-07T15:10:00Z,2026-05-07T15:50:00Z,True
+Denny Ferdiansyah,[WBSP-229]Confirm Power BI API rate limit (separate or shared) and whether incremental data load is the preferred approach.,2026-05-07T14:00:00Z,2026-05-07T15:00:00Z,True
+Denny Ferdiansyah,"[WBSP-227]: Update Boilerplate, Update Database Design Schema, Update Frontend Core Structure, Update Stewardship Structure",2026-05-06T23:00:00Z,2026-05-07T06:30:00Z,True
+Denny Ferdiansyah,[WBSP-227]: Update Boilerplate structure based on new feedback,2026-05-06T05:03:00Z,2026-05-06T07:50:00Z,True
+Denny Ferdiansyah,[KWD-43]: Research for AI-Enhanced Data Ingestion for Design Schedule Middleware,2026-05-06T03:00:00Z,2026-05-06T05:03:00Z,True
+Denny Ferdiansyah,[WBSP-227]: Update Boilerplate structure based on new feedback,2026-05-05T23:00:00Z,2026-05-06T03:00:00Z,True
+Denny Ferdiansyah,[HBS-10]: Fixing Brigance OMS symbol & deploying to production,2026-05-05T11:00:00Z,2026-05-05T13:00:00Z,True
+Denny Ferdiansyah,Create Timeline for Meeting,2026-05-05T08:00:00Z,2026-05-05T11:00:00Z,True
+Denny Ferdiansyah,"[VC-39]: Link LHD, KR Group to LHD Admin Practice Group",2026-05-05T03:00:00Z,2026-05-05T03:30:00Z,True
+Denny Ferdiansyah,[COFE-78]: ESTIMATION: Data Warehouse and Business Analytics,2026-05-05T01:39:49Z,2026-05-05T03:50:49Z,True
+Denny Ferdiansyah,WB Question Review,2026-05-04T23:22:27Z,2026-05-05T01:34:27Z,True
+Denny Ferdiansyah,[HBS-14]: Hawker Brownlow - Deployment to Prod,2026-05-04T17:15:00Z,2026-05-04T17:50:00Z,True
+Denny Ferdiansyah,[TPC-45]: Renew certificates,2026-05-04T16:30:00Z,2026-05-04T17:30:00Z,True
+Denny Ferdiansyah,[BR-135]: Page speed checker & find out the rendering blocking,2026-05-04T05:19:00Z,2026-05-04T07:00:00Z,False
+Denny Ferdiansyah,[INT-120]: Vie Capital Rebuild Scope,2026-05-04T04:30:38Z,2026-05-04T05:19:38Z,True
+Denny Ferdiansyah,Checking Azure Environment for Vie Capital,2026-05-04T03:00:00Z,2026-05-04T04:30:00Z,False
+Denny Ferdiansyah,[COFE-78]: Research Data warehouse & BA,2026-05-04T01:00:00Z,2026-05-04T03:00:00Z,False
+Denny Ferdiansyah,[INT-193]: Mapping & Review Standard SLA Document,2026-05-03T23:00:00Z,2026-05-04T01:00:00Z,False
+Denny Ferdiansyah,[INT-248]: iManage Share API and affects on Solution Archtiecture,2026-05-03T17:05:00Z,2026-05-03T18:11:00Z,True
+Denny Ferdiansyah,[INT-128]: iManage Share API and Affects on Solutino Architecture,2026-05-03T16:00:00Z,2026-05-03T18:00:00Z,False
+Denny Ferdiansyah,[HBS-14]: Deployment CSO to Production. Reconfigure Environment,2026-05-03T14:00:00Z,2026-05-03T16:00:00Z,True
+Denny Ferdiansyah,[HBS-10]: Fixing send user details email functions,2026-05-03T12:00:00Z,2026-05-03T14:00:00Z,True
+Denny Ferdiansyah,[BR-141]: Vercel Configuration for Staging,2026-05-03T11:00:00Z,2026-05-03T13:00:00Z,False
+Denny Ferdiansyah,[KWD-43]: ESTIMATION: AI-Enhanced Data Ingestion for Design Schedule Middleware,2026-05-02T16:40:00Z,2026-05-02T19:00:00Z,True
+Denny Ferdiansyah,"[Routine] Checking all clients site health, server, service",2026-05-02T13:00:00Z,2026-05-02T16:40:00Z,False
+Denny Ferdiansyah,[BR-141]: Vercel Configuration for Staging,2026-05-02T11:00:00Z,2026-05-02T13:00:00Z,True
+Denny Ferdiansyah,"[BR-160]: Code Review, Local Testing, Deployment to Production, AWS Configuration, Services Investigation",2026-05-01T10:00:00Z,2026-05-01T14:00:00Z,False
+Denny Ferdiansyah,[INT-120]: Vie Capital Rebuild Scope,2026-05-01T03:21:03Z,2026-05-01T06:46:03Z,False
+Denny Ferdiansyah,[TCB-15]: Renew Certificate,2026-05-01T02:04:18Z,2026-05-01T02:56:18Z,False
+Denny Ferdiansyah,"[WBSP-31] Backend,Admin Portal, Stewardship Portal: CI/CD Configuration",2026-04-30T23:30:00Z,2026-05-01T02:56:00Z,True
+Denny Ferdiansyah,[WBSP-32] Backend: Implement OKTA SSO,2026-04-30T05:00:00Z,2026-04-30T07:30:00Z,True
+Denny Ferdiansyah,[WBSP-32] Research: OKTA SSO Research,2026-04-30T04:00:00Z,2026-04-30T05:00:00Z,False
+Denny Ferdiansyah,[WBSP-34] Stewardship Portal: Implement 2FA & MFA,2026-04-30T02:00:00Z,2026-04-30T04:00:00Z,True
+Denny Ferdiansyah,[WBSP-34] Backend: Implement 2FA & MFA,2026-04-29T23:00:00Z,2026-04-30T02:00:00Z,True
+Denny Ferdiansyah,[WBSP-34] Implement RBAC to Stewarship Portal,2026-04-29T04:30:00Z,2026-04-29T08:00:00Z,True
+Denny Ferdiansyah,[WBSP-34] Implement RBAC to admin Portal,2026-04-28T22:30:00Z,2026-04-29T04:30:00Z,True
 Tom Adams,,2026-05-22T07:00:00Z,2026-05-22T07:30:00Z,False
 Tom Adams,,2026-05-22T06:00:00Z,2026-05-22T07:00:00Z,False
 Tom Adams,,2026-05-22T04:30:00Z,2026-05-22T06:00:00Z,False
@@ -371,3 +675,63 @@ Tom Adams,,2026-05-12T23:00:00Z,2026-05-13T01:00:00Z,True
 Tom Adams,,2026-05-12T04:00:00Z,2026-05-12T07:00:00Z,False
 Tom Adams,,2026-05-12T01:00:00Z,2026-05-12T04:00:00Z,False
 Tom Adams,,2026-05-11T23:00:00Z,2026-05-12T01:00:00Z,False
+Tom Adams,,2026-05-11T08:00:00Z,2026-05-11T08:30:00Z,False
+Tom Adams,,2026-05-11T07:00:00Z,2026-05-11T08:00:00Z,False
+Tom Adams,,2026-05-11T06:30:00Z,2026-05-11T07:00:00Z,False
+Tom Adams,,2026-05-11T05:00:00Z,2026-05-11T06:30:00Z,False
+Tom Adams,,2026-05-10T23:30:00Z,2026-05-11T05:00:00Z,False
+Tom Adams,,2026-05-10T23:00:00Z,2026-05-10T23:30:00Z,True
+Tom Adams,,2026-05-08T06:30:00Z,2026-05-08T07:30:00Z,False
+Tom Adams,,2026-05-08T06:00:00Z,2026-05-08T06:30:00Z,False
+Tom Adams,,2026-05-08T04:00:00Z,2026-05-08T06:00:00Z,False
+Tom Adams,,2026-05-08T02:00:00Z,2026-05-08T04:00:00Z,True
+Tom Adams,,2026-05-08T00:30:00Z,2026-05-08T02:00:00Z,False
+Tom Adams,,2026-05-07T23:00:00Z,2026-05-08T00:30:00Z,False
+Tom Adams,,2026-05-07T08:00:00Z,2026-05-07T08:30:00Z,False
+Tom Adams,,2026-05-07T07:00:00Z,2026-05-07T08:00:00Z,False
+Tom Adams,,2026-05-07T05:30:00Z,2026-05-07T07:00:00Z,False
+Tom Adams,,2026-05-07T04:30:00Z,2026-05-07T05:30:00Z,False
+Tom Adams,,2026-05-07T02:00:00Z,2026-05-07T04:30:00Z,True
+Tom Adams,,2026-05-07T00:00:00Z,2026-05-07T02:00:00Z,False
+Tom Adams,,2026-05-06T23:00:00Z,2026-05-07T00:00:00Z,False
+Tom Adams,,2026-05-06T07:30:00Z,2026-05-06T08:00:00Z,False
+Tom Adams,,2026-05-06T06:30:00Z,2026-05-06T07:30:00Z,False
+Tom Adams,,2026-05-06T06:00:00Z,2026-05-06T06:30:00Z,False
+Tom Adams,,2026-05-06T05:00:00Z,2026-05-06T07:00:00Z,False
+Tom Adams,,2026-05-06T03:30:00Z,2026-05-06T05:00:00Z,False
+Tom Adams,,2026-05-06T03:00:00Z,2026-05-06T03:30:00Z,True
+Tom Adams,,2026-05-06T01:00:00Z,2026-05-06T03:00:00Z,True
+Tom Adams,,2026-05-05T23:00:00Z,2026-05-06T01:00:00Z,False
+Tom Adams,,2026-05-05T07:00:00Z,2026-05-05T07:30:00Z,False
+Tom Adams,,2026-05-05T06:30:00Z,2026-05-05T07:00:00Z,False
+Tom Adams,,2026-05-05T04:00:00Z,2026-05-05T06:30:00Z,False
+Tom Adams,,2026-05-05T03:30:00Z,2026-05-05T04:00:00Z,True
+Tom Adams,,2026-05-05T02:30:00Z,2026-05-05T03:30:00Z,True
+Tom Adams,,2026-05-05T01:30:00Z,2026-05-05T03:00:00Z,False
+Tom Adams,,2026-05-05T00:00:00Z,2026-05-05T01:30:00Z,True
+Tom Adams,,2026-05-04T23:00:00Z,2026-05-05T00:30:00Z,False
+Tom Adams,,2026-05-04T07:00:00Z,2026-05-04T09:30:00Z,True
+Tom Adams,,2026-05-04T06:00:00Z,2026-05-04T07:00:00Z,False
+Tom Adams,,2026-05-04T05:30:00Z,2026-05-04T06:00:00Z,False
+Tom Adams,,2026-05-04T05:00:00Z,2026-05-04T05:30:00Z,False
+Tom Adams,,2026-05-04T04:00:00Z,2026-05-04T05:00:00Z,False
+Tom Adams,,2026-05-04T03:30:00Z,2026-05-04T04:00:00Z,True
+Tom Adams,,2026-05-04T02:30:00Z,2026-05-04T03:30:00Z,True
+Tom Adams,,2026-05-03T23:00:00Z,2026-05-04T00:00:00Z,False
+Tom Adams,,2026-05-01T05:30:00Z,2026-05-01T06:00:00Z,False
+Tom Adams,,2026-05-01T04:00:00Z,2026-05-01T05:30:00Z,False
+Tom Adams,,2026-05-01T03:00:00Z,2026-05-01T04:30:00Z,False
+Tom Adams,,2026-05-01T02:30:00Z,2026-05-01T03:30:00Z,False
+Tom Adams,,2026-05-01T00:00:00Z,2026-05-01T02:30:00Z,True
+Tom Adams,,2026-04-30T23:00:00Z,2026-05-01T01:00:00Z,False
+Tom Adams,,2026-04-30T07:00:00Z,2026-04-30T08:00:00Z,False
+Tom Adams,,2026-04-30T06:30:00Z,2026-04-30T07:00:00Z,False
+Tom Adams,,2026-04-30T04:30:00Z,2026-04-30T06:30:00Z,False
+Tom Adams,,2026-04-30T03:30:00Z,2026-04-30T04:30:00Z,True
+Tom Adams,,2026-04-30T03:00:00Z,2026-04-30T03:30:00Z,True
+Tom Adams,,2026-04-30T01:30:00Z,2026-04-30T03:00:00Z,False
+Tom Adams,,2026-04-29T23:00:00Z,2026-04-30T02:00:00Z,False
+Tom Adams,,2026-04-29T07:00:00Z,2026-04-29T08:00:00Z,True
+Tom Adams,,2026-04-29T06:00:00Z,2026-04-29T07:00:00Z,False
+Tom Adams,,2026-04-29T05:00:00Z,2026-04-29T06:00:00Z,False
+Tom Adams,,2026-04-28T23:00:00Z,2026-04-29T05:00:00Z,False
