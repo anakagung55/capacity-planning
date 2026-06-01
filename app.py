@@ -103,8 +103,16 @@ def dashboard():
     timeframe = request.args.get('timeframe', 'this_week')
     
     today = datetime.now(timezone.utc)
-    start_of_this_week = today - timedelta(days=today.weekday())
+    
+    # --- LOGIKA BARU: SIKLUS MINGGUAN SABTU - JUMAT ---
+    # Python weekday(): Senin=0, Selasa=1, ..., Jumat=4, Sabtu=5, Minggu=6
+    # Dengan (weekday + 2) % 7, hari Sabtu (5) akan menjadi 0 (awal minggu).
+    current_weekday = today.weekday()
+    days_since_saturday = (current_weekday + 2) % 7
+    
+    start_of_this_week = today - timedelta(days=days_since_saturday)
     start_of_this_week = start_of_this_week.replace(hour=0, minute=0, second=0, microsecond=0)
+    # --------------------------------------------------
 
     if timeframe == 'last_week':
         start_date = start_of_this_week - timedelta(days=7)
@@ -219,7 +227,7 @@ def dashboard():
 
 @app.route('/api/sync', methods=['POST'])
 def sync_data():
-    cache.clear() # <-- TAMBAHAN BARU: Hapus memori saat tombol "Sync APIs" ditekan
+    cache.clear() # <-- Hapus memori saat tombol "Sync APIs" ditekan
     return jsonify({"status": "success", "message": "Cache dibersihkan! Data tersinkronisasi live."})
 
 if __name__ == '__main__':
