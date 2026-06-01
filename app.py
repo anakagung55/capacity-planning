@@ -1,21 +1,54 @@
-from flask import Flask, render_template, request, jsonify
-from flask_caching import Cache  # <-- TAMBAHAN BARU: Import library Caching
+from functools import wraps
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+from flask_caching import Cache
 import requests
 from requests.auth import HTTPBasicAuth
 import pandas as pd
 from datetime import datetime, timezone, timedelta
 import os
 import json
+import secrets
 from dotenv import load_dotenv
 
 load_dotenv()
 
 app = Flask(__name__)
 
-# --- KONFIGURASI CACHE (OPTIMASI SUPER NGEBUT) ---
-app.config['CACHE_TYPE'] = 'SimpleCache'
-app.config['CACHE_DEFAULT_TIMEOUT'] = 300  # Simpan memori selama 5 menit (300 detik)
+app.secret_key = os.getenv('FLASK_SECRET_KEY', secrets.token_hex(16))
+app.permanent_session_lifetime = timedelta(hours=12)
+
+app.config['CACHE_TYPE'] = 'FileSystemCache'
+app.config['CACHE_DIR'] = '/tmp/capacity_cache'
+app.config['CACHE_DEFAULT_TIMEOUT'] = 300
 cache = Cache(app)
+
+DASHBOARD_USER = os.getenv('DASHBOARD_USER', 'admin@thebluerock.com.au')
+DASHBOARD_PASS = os.getenv('DASHBOARD_PASS', 'hwnzzc2s3f8dcdd1')
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] == DASHBOARD_USER and request.form['password'] == DASHBOARD_PASS:
+            session.permanent = True 
+            session['logged_in'] = True
+            return redirect(url_for('dashboard'))
+        else:
+            error = 'Invalid credentials. Please try again.'
+    return render_template('login.html', error=error)
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    return redirect(url_for('login'))
 
 CLOCKIFY_API_KEY = os.getenv('CLOCKIFY_API_KEY')
 WORKSPACE_ID = os.getenv('WORKSPACE_ID')
@@ -61,9 +94,9 @@ def fetch_clockify_realtime(start_date, end_date):
                         "Is_Billable": entry.get('billable', False) 
                     })
             else:
-                print(f"Gagal narik data {name}: {resp.status_code} - {resp.text}")
+                print(f"Fetch failed for {name}: {resp.status_code} - {resp.text}")
         except Exception as e:
-            print(f"Koneksi error ke Clockify untuk {name}: {e}")
+            print(f"Connection error to Clockify for {name}: {e}")
             
     return pd.DataFrame(all_entries)
 
@@ -93,26 +126,21 @@ def fetch_jira_realtime():
                     "Remaining_Estimate_Hrs": (fields.get('timeestimate') or 0) / 3600
                 })
     except Exception as e:
-         print(f"Connection Error ke Jira: {e}")
+         print(f"Connection error to Jira: {e}")
          
     return pd.DataFrame(jira_data)
 
 @app.route('/')
-@cache.cached(query_string=True) # <-- TAMBAHAN BARU: Simpan tampilan di memori berdasarkan filter (This Week/Last Week/dll)
+@requires_auth 
+@cache.cached(query_string=True) 
 def dashboard():
     timeframe = request.args.get('timeframe', 'this_week')
-    
     today = datetime.now(timezone.utc)
-    
-    # --- LOGIKA BARU: SIKLUS MINGGUAN SABTU - JUMAT ---
-    # Python weekday(): Senin=0, Selasa=1, ..., Jumat=4, Sabtu=5, Minggu=6
-    # Dengan (weekday + 2) % 7, hari Sabtu (5) akan menjadi 0 (awal minggu).
+
     current_weekday = today.weekday()
     days_since_saturday = (current_weekday + 2) % 7
-    
     start_of_this_week = today - timedelta(days=days_since_saturday)
     start_of_this_week = start_of_this_week.replace(hour=0, minute=0, second=0, microsecond=0)
-    # --------------------------------------------------
 
     if timeframe == 'last_week':
         start_date = start_of_this_week - timedelta(days=7)
@@ -128,7 +156,7 @@ def dashboard():
         capacity_baseline = 40
     else: 
         start_date = start_of_this_week
-        end_date = today
+        end_date = start_of_this_week + timedelta(days=7) - timedelta(seconds=1)
         capacity_baseline = 40
 
     df_clockify = fetch_clockify_realtime(start_date, end_date)
@@ -139,16 +167,13 @@ def dashboard():
         df_clockify['End_Time'] = pd.to_datetime(df_clockify['End_Time'])
         df_clockify['Duration_Hrs'] = (df_clockify['End_Time'] - df_clockify['Start_Time']).dt.total_seconds() / 3600
         
-        # Hitung Total Time
         time_spent_per_user = df_clockify.groupby('Name')['Duration_Hrs'].sum().reset_index()
         time_spent_per_user.rename(columns={'Name': 'Assignee', 'Duration_Hrs': 'Time_Spent'}, inplace=True)
 
-        # Hitung Billable Time
         df_billable = df_clockify[df_clockify['Is_Billable'] == True]
         billable_spent = df_billable.groupby('Name')['Duration_Hrs'].sum().reset_index()
         billable_spent.rename(columns={'Name': 'Assignee', 'Duration_Hrs': 'Billable_Hrs'}, inplace=True)
 
-        # Hitung Non-Billable Time
         df_non_billable = df_clockify[df_clockify['Is_Billable'] == False]
         non_billable_spent = df_non_billable.groupby('Name')['Duration_Hrs'].sum().reset_index()
         non_billable_spent.rename(columns={'Name': 'Assignee', 'Duration_Hrs': 'Non_Billable_Hrs'}, inplace=True)
@@ -166,23 +191,18 @@ def dashboard():
 
     all_users = pd.DataFrame({'Assignee': team_names})
     
-    # Merge Total Waktu
     df_merged = pd.merge(all_users, time_spent_per_user, on='Assignee', how='left')
     df_merged['Time_Spent'] = df_merged['Time_Spent'].fillna(0)
     
-    # Merge Billable Waktu
     df_merged = pd.merge(df_merged, billable_spent, on='Assignee', how='left')
     df_merged['Billable_Hrs'] = df_merged['Billable_Hrs'].fillna(0)
     
-    # Merge Non-Billable Waktu
     df_merged = pd.merge(df_merged, non_billable_spent, on='Assignee', how='left')
     df_merged['Non_Billable_Hrs'] = df_merged['Non_Billable_Hrs'].fillna(0)
     
-    # Merge Jira
     df_merged = pd.merge(df_merged, remaining_per_user, on='Assignee', how='left')
     df_merged['Remaining_Estimate_Hrs'] = df_merged['Remaining_Estimate_Hrs'].fillna(0)
     
-    # Kalkulasi Kapasitas Sisa
     df_merged['Capacity_Left'] = capacity_baseline - (df_merged['Time_Spent'] + df_merged['Remaining_Estimate_Hrs'])
 
     team_count = len(df_merged)
@@ -226,9 +246,10 @@ def dashboard():
                            current_timeframe=timeframe)
 
 @app.route('/api/sync', methods=['POST'])
+@requires_auth  
 def sync_data():
-    cache.clear() # <-- Hapus memori saat tombol "Sync APIs" ditekan
-    return jsonify({"status": "success", "message": "Cache dibersihkan! Data tersinkronisasi live."})
+    cache.clear() 
+    return jsonify({"status": "success", "message": "Cache successfully cleared."})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
