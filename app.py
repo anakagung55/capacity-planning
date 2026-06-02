@@ -57,14 +57,14 @@ JIRA_DOMAIN = 'https://bluerockdigital.atlassian.net'
 JIRA_EMAIL = 'agung.ajus@staroster.com'
 
 team_users = {
-    "Abu Baskara": "692cc9e25831f77701ac3344",
+    "Abu Hasan Baskara": "692cc9e25831f77701ac3344",
     "Agung Ajus": "69924903d96aea171725d0bf",
     "Alex Russo": "691e41d5e268e57a5174a94b",
     "Andrew Branagan": "68abc20baf2ceb7c58ddd4b8",
     "Denny Ferdiansyah": "68abc20baf2ceb7c58ddd4ba",
-    "Kate Wiggins": "68abc20baf2ceb7c58ddd4b9",
+    "kate.wiggins": "68abc20baf2ceb7c58ddd4b9",
     "Tabatha Shaw": "69646a1c3fcbbd3370cf0ce1",
-    "Tom Adams": "68abc20baf2ceb7c58ddd4bb"
+    "Thomas Adams": "68abc20baf2ceb7c58ddd4bb"
 }
 team_names = list(team_users.keys())
 
