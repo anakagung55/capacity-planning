@@ -6,6 +6,8 @@
 <title>Team Capacity Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -61,7 +63,7 @@
   .util-pct { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; color: var(--text); line-height: 1; }
   .util-sub { font-size: 11px; color: var(--text2); margin-top: 4px; }
   
-  .main-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2rem;}
+  .main-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2rem; padding-bottom: 10px;}
   .card-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
   .card-header-title { font-size: 15px; font-weight: 600; color: var(--text); }
   
@@ -102,6 +104,39 @@
   .view-section { display: none; }
   .view-section.active { display: block; animation: fadeIn 0.3s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* --- JIRA STATUS BADGES (NEW) --- */
+  .stat-badge { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 500; display: inline-block; border: 1px solid;}
+  .stat-prog { background: rgba(96, 165, 250, 0.1); color: #60a5fa; border-color: rgba(96, 165, 250, 0.3); } /* Blue */
+  .stat-block { background: rgba(248, 113, 113, 0.1); color: #f87171; border-color: rgba(248, 113, 113, 0.3); } /* Red */
+  .stat-todo { background: rgba(139, 144, 184, 0.1); color: #8b90b8; border-color: rgba(139, 144, 184, 0.3); } /* Gray */
+  .stat-rev { background: rgba(251, 191, 36, 0.1); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); } /* Amber */
+  .stat-qa { background: rgba(45, 212, 191, 0.1); color: #2dd4bf; border-color: rgba(45, 212, 191, 0.3); } /* Teal */
+  .stat-def { background: var(--bg4); color: var(--text); border-color: var(--border2); }
+
+  /* --- DATATABLES DARK THEME OVERRIDES --- */
+  .dataTables_wrapper { padding: 0 24px; margin-top: 15px; }
+  .dataTables_wrapper .dataTables_filter input { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 6px 10px; margin-left: 8px; outline: none; font-family: 'DM Sans', sans-serif;}
+  .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--accent); }
+  .dataTables_wrapper .dataTables_length select { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 4px; outline: none; }
+  .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter { color: var(--text2) !important; font-size: 13px; margin-bottom: 12px; }
+  .dataTables_wrapper .dataTables_paginate { margin-top: 15px; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button { color: var(--text) !important; border: 1px solid var(--border) !important; border-radius: 6px; margin: 0 4px; padding: 6px 12px; cursor: pointer; transition: 0.2s; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button:hover { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled { opacity: 0.4; cursor: not-allowed; background: transparent !important; border-color: var(--border) !important; color: var(--text3) !important;}
+  table.dataTable thead th, table.dataTable thead td { border-bottom: 1px solid var(--border) !important; }
+  table.dataTable.no-footer { border-bottom: 1px solid var(--border) !important; }
+
+  /* --- DATATABLES EXPORT BUTTONS CSS (NEW) --- */
+  .dt-top-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+  .dt-buttons .dt-button { background: var(--bg3) !important; border: 1px solid var(--border) !important; color: var(--text) !important; border-radius: 6px !important; padding: 6px 12px !important; font-family: 'DM Sans', sans-serif; font-size: 12px !important; transition: 0.2s; }
+  .dt-buttons .dt-button:hover { background: var(--accent) !important; border-color: var(--accent) !important; color: white !important; }
+
+  /* --- CUSTOM TABLE FILTERS --- */
+  .table-filters { padding: 12px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; background: var(--bg); align-items: center;}
+  .filter-select { background: var(--bg2); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; cursor: pointer; transition: 0.2s; min-width: 150px; }
+  .filter-select:hover, .filter-select:focus { border-color: var(--accent); }
+  .filter-label { font-size: 12px; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 </style>
 </head>
 <body>
@@ -175,7 +210,7 @@
 
       <div class="util-row" id="util-container">
         {% for person in team_data %}
-        <div class="util-card filterable-card" data-name="{{ person.name | lower }}">
+        <div class="util-card filterable-card" data-name="{{ person.name | lower }}" data-color="{{ person.color_var }}">
           <div class="util-name">
             <div class="avatar" style="background:rgba(255,255,255,0.05);color:var({{ person.color_var }});">{{ person.initials }}</div>
             {{ person.name }}
@@ -183,11 +218,20 @@
           <div class="util-arc">
             <svg width="100%" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 40 A32 32 0 0 1 72 40" stroke="#1e2030" stroke-width="6" stroke-linecap="round"/>
-              <path d="M8 40 A32 32 0 0 1 72 40" stroke="var({{ person.color_var }})" stroke-width="6" stroke-linecap="round" stroke-dasharray="100.5" stroke-dashoffset="{{ 100.5 - (person.util_pct / 100 * 100.5) }}"/>
+              <path class="util-arc-fill" d="M8 40 A32 32 0 0 1 72 40" stroke="var({{ person.color_var }})" stroke-width="6" stroke-linecap="round" stroke-dasharray="100.5" stroke-dashoffset="{{ 100.5 - (person.util_pct / 100 * 100.5) }}"/>
             </svg>
           </div>
           <div class="util-pct" style="color:var({{ person.color_var }})">{{ person.util_pct }}%</div>
-          <div class="util-sub">utilisation</div>
+          <div class="util-sub" style="margin-bottom:12px;">utilisation</div>
+          
+          <div style="padding-top: 12px; border-top: 1px dashed var(--border2); display: flex; justify-content: space-between; font-size: 11px;">
+            <span style="color: var(--text2);">Logged: <b style="color: var(--text);">{{ person.time_spent }}h</b></span>
+            {% if person.time_spent > 0 %}
+            <span style="color: var(--text2);">(<b style="color: var(--green);">{{ ((person.billable_hrs / person.time_spent) * 100) | int }}%</b> B)</span>
+            {% else %}
+            <span style="color: var(--text3);">(0% B)</span>
+            {% endif %}
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -270,7 +314,21 @@
         <div class="card-header">
           <div class="card-header-title">Raw Clockify Log Entries</div>
         </div>
-        <table>
+        <div class="table-filters">
+          <span class="filter-label">Filter Logs:</span>
+          <select id="filter-clockify-member" class="filter-select">
+            <option value="">All Members</option>
+            {% for person in team_data %}
+            <option value="{{ person.name }}">{{ person.name }}</option>
+            {% endfor %}
+          </select>
+          <select id="filter-clockify-billable" class="filter-select">
+            <option value="">All Types</option>
+            <option value="Yes">Billable Only (Yes)</option>
+            <option value="No">Non-Billable Only (No)</option>
+          </select>
+        </div>
+        <table id="clockifyTable" class="display">
           <thead>
             <tr>
               <th style="width: 200px;">Member</th>
@@ -281,7 +339,7 @@
           </thead>
           <tbody id="clockify-table-body">
             {% for log in clockify_data %}
-            <tr class="filterable-row">
+            <tr>
               <td><div class="person-name">{{ log.Name }}</div></td>
               <td class="detail-text">{{ log.Description }}</td>
               <td class="detail-text">{{ log.Start_Time }}</td>
@@ -304,7 +362,24 @@
         <div class="card-header">
           <div class="card-header-title">Active Jira Pipeline</div>
         </div>
-        <table>
+        <div class="table-filters">
+          <span class="filter-label">Filter Tickets:</span>
+          <select id="filter-jira-assignee" class="filter-select">
+            <option value="">All Assignees</option>
+            {% for person in team_data %}
+            <option value="{{ person.name }}">{{ person.name }}</option>
+            {% endfor %}
+          </select>
+          <select id="filter-jira-status" class="filter-select">
+            <option value="">All Statuses</option>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="In Review">In Review</option>
+            <option value="Blocked">Blocked</option>
+            <option value="Ready for QA">Ready for QA</option>
+          </select>
+        </div>
+        <table id="jiraTable" class="display">
           <thead>
             <tr>
               <th style="width: 150px;">Ticket ID</th>
@@ -316,11 +391,28 @@
           </thead>
           <tbody id="jira-table-body">
             {% for ticket in jira_data %}
-            <tr class="filterable-row">
+            <tr>
               <td><span class="tag">{{ ticket.Ticket_ID }}</span></td>
               <td><div class="person-name">{{ ticket.Assignee }}</div></td>
               <td class="detail-text">{{ ticket.Summary }}</td>
-              <td><span class="tag">{{ ticket.Status }}</span></td>
+              
+              <td>
+                {% set stat = ticket.Status | lower %}
+                {% if 'progress' in stat %}
+                  <span class="stat-badge stat-prog">{{ ticket.Status }}</span>
+                {% elif 'block' in stat %}
+                  <span class="stat-badge stat-block">{{ ticket.Status }}</span>
+                {% elif 'do' in stat or 'triage' in stat or 'backlog' in stat %}
+                  <span class="stat-badge stat-todo">{{ ticket.Status }}</span>
+                {% elif 'review' in stat %}
+                  <span class="stat-badge stat-rev">{{ ticket.Status }}</span>
+                {% elif 'qa' in stat or 'test' in stat %}
+                  <span class="stat-badge stat-qa">{{ ticket.Status }}</span>
+                {% else %}
+                  <span class="stat-badge stat-def">{{ ticket.Status }}</span>
+                {% endif %}
+              </td>
+              
               <td style="text-align:right;">
                 <div class="hrs-val">{{ ticket.Remaining_Estimate_Hrs }}h</div>
               </td>
@@ -333,8 +425,67 @@
 
 </div>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
 <script>
-  // 1. TABS LOGIC
+  let clockifyDT, jiraDT;
+
+  $(document).ready(function() {
+      // 1. Inisialisasi Tabel Clockify (DITAMBAH EXPORT BUTTONS)
+      clockifyDT = $('#clockifyTable').DataTable({
+          dom: '<"dt-top-flex"Bf>rt<"dataTables_wrapper"ilp>',
+          buttons: [
+              { extend: 'csv', text: 'Export CSV', className: 'dt-button' },
+              { extend: 'excel', text: 'Export Excel', className: 'dt-button' }
+          ],
+          pageLength: 10,
+          order: [[ 2, "desc" ]],
+          language: { search: "" },
+          lengthMenu: [10, 25, 50, 100]
+      });
+
+      // 2. Inisialisasi Tabel Jira (DITAMBAH EXPORT BUTTONS)
+      jiraDT = $('#jiraTable').DataTable({
+          dom: '<"dt-top-flex"Bf>rt<"dataTables_wrapper"ilp>',
+          buttons: [
+              { extend: 'csv', text: 'Export CSV', className: 'dt-button' },
+              { extend: 'excel', text: 'Export Excel', className: 'dt-button' }
+          ],
+          pageLength: 10,
+          order: [[ 4, "desc" ]],
+          language: { search: "" },
+          lengthMenu: [10, 25, 50, 100]
+      });
+
+      // Custom Search Placeholder styling
+      $('.dataTables_filter input').attr("placeholder", "Search table...");
+
+      // --- LOGIKA DROPDOWN FILTER CLOCKIFY ---
+      $('#filter-clockify-member').on('change', function() {
+          clockifyDT.column(0).search(this.value).draw();
+      });
+
+      $('#filter-clockify-billable').on('change', function() {
+          let val = $.fn.dataTable.util.escapeRegex(this.value);
+          clockifyDT.column(3).search(val ? '^' + val + '$' : '', true, false).draw();
+      });
+
+      // --- LOGIKA DROPDOWN FILTER JIRA ---
+      $('#filter-jira-assignee').on('change', function() {
+          let val = $.fn.dataTable.util.escapeRegex(this.value);
+          jiraDT.column(1).search(val ? '^' + val + '$' : '', true, false).draw();
+      });
+
+      $('#filter-jira-status').on('change', function() {
+          jiraDT.column(3).search(this.value).draw();
+      });
+  });
+
+  // 3. TABS LOGIC
   function switchTab(tabId, btn) {
     document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
@@ -343,10 +494,11 @@
     document.getElementById('view-' + tabId).classList.add('active');
   }
 
-  // 2. SEARCH FILTER LOGIC
+  // 4. SEARCH FILTER LOGIC (Dikawinkan dengan DataTables)
   function filterAllData() {
     let input = document.getElementById("searchInput").value.toLowerCase();
 
+    // A. Filter visual UI Merged Dashboard
     let cards = document.querySelectorAll('.filterable-card');
     let visibleCards = 0;
     cards.forEach(card => {
@@ -356,17 +508,21 @@
     });
     document.getElementById("count-members").innerText = visibleCards;
 
-    document.querySelectorAll('.filterable-row').forEach(row => {
+    document.querySelectorAll('#view-merged .filterable-row').forEach(row => {
       row.style.display = (row.textContent || row.innerText).toLowerCase().indexOf(input) > -1 ? "" : "none";
     });
+
+    // B. Trigger pencarian DataTables
+    if (clockifyDT) clockifyDT.search(input).draw();
+    if (jiraDT) jiraDT.search(input).draw();
   }
 
-  // 3. TIMEFRAME DROPDOWN LOGIC 
+  // 5. TIMEFRAME DROPDOWN LOGIC 
   function changeTimeframe(value) {
     window.location.href = "/?timeframe=" + value;
   }
 
-  // 4. API SYNC LOGIC
+  // 6. API SYNC LOGIC
   function triggerSync() {
     const btn = document.getElementById('syncBtn');
     const statusText = document.getElementById('sync-status');
@@ -385,7 +541,7 @@
       .catch(e => { alert("Jaringan terputus."); btn.disabled = false; btn.style.opacity = "1"; btnText.innerText = "Sync APIs"; });
   }
 
-  // 5. ANIMATION
+  // 7. ANIMATION
   document.querySelectorAll('.prog-fill, .cap-bar-fill').forEach(bar => {
     const target = bar.style.width;
     bar.style.width = '0';
