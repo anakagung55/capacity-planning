@@ -57,16 +57,27 @@ JIRA_DOMAIN = 'https://bluerockdigital.atlassian.net'
 JIRA_EMAIL = 'agung.ajus@staroster.com'
 
 team_users = {
-    "Abu Hasan Baskara": "692cc9e25831f77701ac3344",
+    "Abu Baskara": "692cc9e25831f77701ac3344",
     "Agung Ajus": "69924903d96aea171725d0bf",
     "Alex Russo": "691e41d5e268e57a5174a94b",
     "Andrew Branagan": "68abc20baf2ceb7c58ddd4b8",
     "Denny Ferdiansyah": "68abc20baf2ceb7c58ddd4ba",
-    "kate.wiggins": "68abc20baf2ceb7c58ddd4b9",
+    "Kate Wiggins": "68abc20baf2ceb7c58ddd4b9",
     "Tabatha Shaw": "69646a1c3fcbbd3370cf0ce1",
-    "Thomas Adams": "68abc20baf2ceb7c58ddd4bb"
+    "Tom Adams": "68abc20baf2ceb7c58ddd4bb"
 }
 team_names = list(team_users.keys())
+
+jira_mapping = {
+    "Abu Baskara": "Abu Hasan Baskara",
+    "Agung Ajus": "Agung Ajus",
+    "Alex Russo": "Alex Russo",
+    "Andrew Branagan": "Andrew Branagan",
+    "Denny Ferdiansyah": "Denny Ferdiansyah",
+    "Kate Wiggins": "kate.wiggins",
+    "Tabatha Shaw": "Tabatha Shaw",
+    "Tom Adams": "Thomas Adams"
+}
 
 def fetch_clockify_realtime(start_date, end_date):
     start_iso = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -101,33 +112,44 @@ def fetch_clockify_realtime(start_date, end_date):
     return pd.DataFrame(all_entries)
 
 def fetch_jira_realtime():
-    team_names_joined = '", "'.join(team_names)
-    jql_query = f'assignee IN ("{team_names_joined}") AND statusCategory != Done'
     url = f"{JIRA_DOMAIN}/rest/api/3/search/jql"
     auth = HTTPBasicAuth(JIRA_EMAIL, JIRA_API_TOKEN)
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
-    payload = json.dumps({
-        "jql": jql_query, "maxResults": 100,
-        "fields": ["summary", "assignee", "timeestimate", "status"]
-    })
-
+    
     jira_data = []
-    try:
-        resp = requests.post(url, data=payload, headers=headers, auth=auth)
-        if resp.status_code == 200:
-            for issue in resp.json().get('issues', []):
-                fields = issue.get('fields', {})
-                assignee = fields.get('assignee', {}).get('displayName', 'Unassigned') if fields.get('assignee') else 'Unassigned'
-                jira_data.append({
-                    "Ticket_ID": issue.get('key'),
-                    "Assignee": assignee,
-                    "Status": fields.get('status', {}).get('name', 'Unknown'),
-                    "Summary": fields.get('summary'),
-                    "Remaining_Estimate_Hrs": (fields.get('timeestimate') or 0) / 3600
-                })
-    except Exception as e:
-         print(f"Connection error to Jira: {e}")
-         
+
+    for ui_name, jira_name in jira_mapping.items():
+        jql_query = f'assignee = "{jira_name}" AND statusCategory != Done'
+        payload = json.dumps({
+            "jql": jql_query, "maxResults": 100,
+            "fields": ["summary", "assignee", "timeestimate", "status"]
+        })
+
+        try:
+            resp = requests.post(url, data=payload, headers=headers, auth=auth)
+            if resp.status_code == 200:
+                for issue in resp.json().get('issues', []):
+                    fields = issue.get('fields', {})
+                    
+                    # LOGIKA FALLBACK: Pakai Remaining, kalau kosong pakai Original
+                    remaining = fields.get('timeestimate')
+                    original = fields.get('timeoriginalestimate')
+                    
+                    # Kalau remaining ada isinya, pakai itu. Kalau None, pakai original.
+                    final_estimate = remaining if remaining is not None else (original if original is not None else 0)
+                    
+                    jira_data.append({
+                        "Ticket_ID": issue.get('key'),
+                        "Assignee": ui_name,
+                        "Status": fields.get('status', {}).get('name', 'Unknown'),
+                        "Summary": fields.get('summary'),
+                        "Remaining_Estimate_Hrs": final_estimate / 3600
+                    })
+            else:
+                print(f"JQL Error for {jira_name}: {resp.status_code} - {resp.text}")
+        except Exception as e:
+             print(f"Connection Error to Jira for {jira_name}: {e}")
+             
     return pd.DataFrame(jira_data)
 
 @app.route('/')
